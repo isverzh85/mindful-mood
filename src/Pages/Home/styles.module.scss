@@ -83,30 +83,53 @@ body {
 }
 
 .colorInputContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
+  margin-top:480px;
+  margin-left:340px;
 }
 
-.textColor{
+.colorText{
+  position:absolute;
+  width:209px;
+  height:78px;
+  left:320px;
+  top:470px;
+  font-family:'Jost';
+  font-style:normal;
+  font-weight:400;
+  font-size:54px;
+  line-height:78px;
+  border:none;
+}
+
+.separateLineTwo{
    position: absolute;
-   width: 209px;
-   height: 78px;
-   left: 330px;
-   top: 500px;
-   font-family: 'Jost';
-   font-style: normal;
-   font-weight: 400; 
-   font-size: 54px;
-   line-height: 78px;
-   border: none;
-
+   width: 570px;
+   height: 0px;
+   left: 130px;
+   top: 580px;
+   border: 1px solid #4E4E4E;
 }
 
-// .favoriteColor {
-//   font-size: 24px;
-//   margin-bottom: 16px;
-// }
+.finish{
+     position:absolute;
+     width:109px;
+     height:58px;
+     left:970px;
+     top:780px;
+     font-family: 'Jost';
+     font-style: normal;
+     font-weight: 700;
+     font-size: 40px;
+     line-height: 58px;
+     color: #368BE4;
+}
 
-
+.finishLine{
+     position: absolute;
+     width: 108px;
+     height: 0px;
+     left: 970px;
+     top: 830px;
+     border: 1px solid #368BE4;
+     transform: rotate(180deg);
+}

@@ -1,0 +1,208 @@
+.greeting{
+    position: absolute;
+    height: 64px;
+    left: 80px;
+    top: 60px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 64px;
+}
+
+.greetingTwo{
+    position: absolute;
+    width: 310px;
+    height: 49px;
+    left: 338px;
+    top: 71px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 49px;
+    color: #383838;
+}
+
+.date{
+    position: absolute;
+    height: 49px;
+    left: 138px;
+    top: 124px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 49px;
+    color: #383838;
+}
+
+.step{
+    position: absolute;
+    width: 116px;
+    height: 64px;
+    left: 80px;
+    top: 203px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 64px;
+}
+
+.tracking{
+    position: absolute;
+    width: 168px;
+    height: 70px;
+    left: 80px;
+    top: 281px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #383838;
+}
+
+.anxious{
+    position: absolute;
+    width: 482px;
+    height: 35px;
+    left: 70px;
+    top: 30px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #383838;
+}
+
+.checkingIn{
+    position: absolute;
+    width: 344px;
+    height: 35px;
+    left: 70px;
+    top: 100px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #383838
+}
+
+.anxiousButton{
+    box-sizing: border-box;
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 10px;
+    top: 25px;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+}
+
+.checkingButton{
+    box-sizing: border-box;
+    position: absolute;
+    width: 41px;
+    height: 41px;
+    left: 15px;
+    top: 93px;
+    background: #FFFFFF;
+    border: 1px solid #E3E3E3;
+}
+
+.notesContainer{
+    position: absolute;
+    width: 498px;
+    height: 1024px;
+    left: 942px;
+    top: 0px;
+    background: linear-gradient(180deg, #8C91FF 0%, rgba(140, 145, 255, 0.65) 100%);
+}
+
+.anxietyContainer{
+    box-sizing: border-box;
+    position: absolute;
+    width: 582px;
+    height: 172px;
+    left: 265px;
+    top: 203px;
+    border: 1px solid #8C91FF;
+    border-radius: 8px;
+}
+
+.notes{
+    position: absolute;
+    width: 284px;
+    height: 70px;
+    left: 120px;
+    top: 60px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+.notesContainerTwo{
+    position: absolute;
+    width: 390px;
+    height: 794px;
+    left: 72px;
+    top: 165px;
+    background: #FFFFFF;
+    border-radius: 8px;
+}
+
+.lineOne{
+    position: absolute;
+    width: 767px;
+    height: 0px;
+    left: 100px;
+    top: 425px;
+    border: 1px solid #E3E3E3;
+    transform: rotate(180deg);
+}
+
+.stepTwo{
+    position: absolute;
+    width: 121px;
+    height: 64px;
+    left: 80px;
+    top: 435px;
+    font-family: 'Jost';
+    font-style: normal; 
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 64px;
+    color: #E3E3E3;
+}
+
+.lineTwo{
+    position: absolute;
+    width: 767px;
+    height: 0px;
+    left: 100px;
+    top: 537px;
+    border: 1px solid #E3E3E3;
+    transform: rotate(180deg);
+}
+
+.stepThree{
+    position: absolute;
+    width: 120px;
+    height: 64px;
+    left: 81px;
+    top: 567px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 64px;
+    color: #E3E3E3;
+}
