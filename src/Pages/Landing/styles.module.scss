@@ -116,11 +116,11 @@
 
 .notesContainer{
     position: absolute;
-    width: 498px;
+    width: 590px;
     height: 1024px;
-    left: 942px;
+    left: 1345px;
     top: 0px;
-    background: linear-gradient(180deg, #8C91FF 0%, rgba(140, 145, 255, 0.65) 100%);
+    background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color)  100%);
 }
 
 .anxietyContainer{
@@ -130,7 +130,7 @@
     height: 172px;
     left: 265px;
     top: 203px;
-    border: 1px solid #8C91FF;
+    border: 1px solid var(--underline-color);
     border-radius: 8px;
 }
 
@@ -151,8 +151,8 @@
 
 .notesContainerTwo{
     position: absolute;
-    width: 390px;
-    height: 794px;
+    width: 434px;
+    height: 754px;
     left: 72px;
     top: 165px;
     background: #FFFFFF;
@@ -206,3 +206,25 @@
     line-height: 64px;
     color: #E3E3E3;
 }
+
+:root {
+    --underline-color: #000000; 
+  }
+
+  .stepUnderline {
+    position: absolute;
+    width: 116px;
+    height: 8px;
+    left: 80px;
+    top: 263px;
+    border-radius: 100px;
+    background-color: var(--underline-color);
+  }
+
+  .logo{
+    position: absolute;
+    width: 146.95px;
+    height: 22.5px;
+    left: 220px;
+    top: 950.18px;
+  }

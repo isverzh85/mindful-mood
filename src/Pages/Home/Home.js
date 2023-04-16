@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-// import { useHistory } from 'react-router-dom';
 import styles from '../Home/styles.module.scss';
+import logo from '../../assets/Logo.png'
 import { SketchPicker } from 'react-color';
 import { Link } from 'react-router-dom';
 
@@ -8,10 +8,9 @@ import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
     const [name, setName] = useState('');
-    const [color, setColor] = useState('#ffffff');
+    const [color, setColor] = useState('');
     const [inputColor, setInputColor] = useState('');
-    const [showPicker, setShowPicker] = useState(false);
-    // const history = useHistory();
+    const [showPicker, setShowPicker] = useState(true);
 
 
     useEffect(() => {
@@ -43,6 +42,9 @@ export const HomePage = () => {
 
     const handleColorChange = (newColor) => {
         setColor(newColor.hex);
+        document.documentElement.style.setProperty('--text-color', newColor.hex);
+        document.documentElement.style.setProperty('--underline-color', newColor.hex);
+
       };
     
     const togglePicker = () => {
@@ -51,7 +53,7 @@ export const HomePage = () => {
      
 return (
     <div className={styles.homePage}>
-        <div className={styles.mindFullName}>Mindful Mood</div>
+            <img src={logo} alt="logo" className={styles.logo} />
           <div className={styles.container}>
             <div className={styles.nameInputContainer}>
               <label className={styles.nameInputLabel}>Hello. What's your name?</label>
@@ -71,6 +73,7 @@ return (
           <div className={styles.colorBox} style={{ backgroundColor: color }} onClick={togglePicker} />
           {showPicker && (
                   <SketchPicker 
+                         className={styles.sketch}
                          color={color} 
                          onChange={handleColorChange} 
                   />
@@ -80,11 +83,10 @@ return (
                 className={styles.colorText}
                 type="text" 
                 value={color} 
-                onChange={handleColorInputChange} 
+                onChange={handleColorChange} 
             />
             <div className={styles.separateLineTwo}></div> 
             <Link to="/landing-page" className={styles.finish}>Finish</Link>
-            <div className={styles.finishLine}></div>
           </div>
         </div>
     </div>
