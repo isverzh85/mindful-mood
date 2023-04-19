@@ -4,14 +4,11 @@ import logo from '../../assets/Logo.png'
 import { SketchPicker } from 'react-color';
 import { Link } from 'react-router-dom';
 
-
-
 export const HomePage = () => {
     const [name, setName] = useState('');
     const [color, setColor] = useState('');
     const [inputColor, setInputColor] = useState('');
     const [showPicker, setShowPicker] = useState(true);
-
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -44,7 +41,7 @@ export const HomePage = () => {
         setColor(newColor.hex);
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
-
+        setShowPicker(false); 
       };
     
     const togglePicker = () => {

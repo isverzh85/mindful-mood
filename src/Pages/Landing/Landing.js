@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from '../Landing/styles.module.scss';
-import logo from '../../assets/Logo.png'
+import logo from '../../assets/Logo.png';
+import sunLogo from '../../assets/SunLogo.png';
 import FeelingDown from '../../components/FeelingDown/FeelingDown';
 import CheckingIn from '../../components/CheckingIn/CheckingIn';
 
@@ -9,6 +10,8 @@ export const LandingPage = () => {
     const [date, setDate] = useState('');
     const [color, setColor] = useState('');
     const [feelings, setFeelings] =useState('');
+    const [currentStep, setCurrentStep] = useState(1);
+
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -25,12 +28,15 @@ export const LandingPage = () => {
 
       const handleFeelingChange = (event) => {
         setFeelings(event.target.value);
+        setCurrentStep(2);
     };
 
       return (
         <div className={styles.landingPage}>
           <div className={styles.greeting}>Hello, {name}.</div>
           <div className={styles.greetingTwo}>How are you feeling?</div>
+          <img src={sunLogo} alt="sunLogo" className={styles.sunLogo} />
+
           <div className={styles.date}>Today is {date}.</div>
           <div className={styles.step}>Step 1</div>
           <div className={styles.stepUnderline}></div>
@@ -46,6 +52,7 @@ export const LandingPage = () => {
                 />
                    {feelings === "anxious" && <FeelingDown />}
               <span className={styles.anxious}>I'm feeling anxious/depressed or otherwise off.</span>
+              <FeelingDown currentStep={currentStep} />
            </label>
             <label>
               <input type="radio" 
@@ -57,7 +64,8 @@ export const LandingPage = () => {
                 />
                    {feelings === "checkingIn" && <CheckingIn />}
               <span className={styles.checkingIn}>I'm just checking in with my body.</span>
-            </label>
+              <CheckingIn currentStep={currentStep} />
+           </label>
            </div>
            <div className={styles.lineOne}></div>
            <div className={styles.stepTwo}>Step 2</div>
