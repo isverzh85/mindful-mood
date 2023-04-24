@@ -1,19 +1,19 @@
-.greeting{
-    position: absolute;
+.greetingContainer{
+    display: flex;
     height: 64px;
-    left: 80px;
-    top: 60px;
+    margin-left: 100px;
+    margin-top:60px;
     font-weight: 700;
     font-size: 44px;
     line-height: 64px;
 }
 
 .greetingTwo{
-    position: absolute;
+    display: inline-block;
     width: 310px;
     height: 49px;
-    left: 338px;
-    top: 71px;
+    margin-left: 20px;
+    margin-bottom:50px;
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
@@ -21,10 +21,8 @@
 }
 
 .date{
-    position: absolute;
     height: 49px;
-    left: 138px;
-    top: 124px;
+    margin-left: 170px;
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
@@ -32,21 +30,19 @@
 }
 
 .step{
-    position: absolute;
     height: 64px;
-    left: 80px;
-    top: 203px;
+    margin-left: 85px;
+    margin-top: 20px;
     font-weight: 400;
     font-size: 44px;
     line-height: 64px;
 }
 
 .tracking{
-    position: absolute;
     width: 168px;
     height: 70px;
-    left: 80px;
-    top: 281px;
+    margin-left: 80px;
+    margin-top: 20px;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
@@ -54,11 +50,9 @@
 }
 
 .anxious{
-    position: absolute;
     width: 482px;
     height: 35px;
-    left: 70px;
-    top: 30px;
+    margin-left: 10px;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
@@ -66,10 +60,8 @@
 }
 
 .checkingIn{
-    position: absolute;
     height: 35px;
-    left: 70px;
-    top: 100px;
+    margin-left:10px;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
@@ -78,53 +70,51 @@
 
 .anxiousButton{
     box-sizing: border-box;
-    position: absolute;
     width: 41px;
     height: 41px;
-    left: 10px;
-    top: 25px;
+    margin-left: 7px;
+    margin-top: 10px;
     background-color: var(--underline-color);
     border: 1px solid var(--underline-color);
 }
 
 .checkingButton{
     box-sizing: border-box;
-    position: absolute;
     width: 41px;
     height: 41px;
-    left: 10px;
-    top: 93px;
+    margin-left: 10px;
+    margin-top: 15px;
     background-color: var(--underline-color);
     border: 1px solid var(--underline-color);
-
 }
 
 .notesContainer{
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 590px;
     height: 1024px;
-    left: 1245px;
-    top: 0px;
+    margin-left:900px;
     background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color)  100%);
 }
 
 .anxietyContainer{
     box-sizing: border-box;
-    position: absolute;
     width: 582px;
     height: 172px;
-    left: 265px;
-    top: 203px;
+    margin-left:270px;
+    margin-bottom:50px;
+    padding:15px;
     border: 1px solid var(--underline-color);
     border-radius: 8px;
 }
 
 .notes{
-    position: absolute;
+    display:flex;
+    margin-bottom:30px;
     width: 284px;
     height: 70px;
-    left: 120px;
-    top: 60px;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
@@ -133,7 +123,6 @@
 }
 
 .notesContainerTwo{
-    position: absolute;
     width: 434px;
     height: 754px;
     left: 72px;
@@ -143,21 +132,17 @@
 }
 
 .lineOne{
-    position: absolute;
     width: 767px;
     height: 0px;
-    left: 100px;
-    top: 425px;
+    margin-left:85px;
     border: 1px solid #E3E3E3;
     transform: rotate(180deg);
 }
 
 .stepTwo{
-    position: absolute;
     width: 121px;
     height: 64px;
-    left: 80px;
-    top: 435px;
+    margin-left:75px;
     font-family: 'Jost';
     font-style: normal; 
     font-weight: 400;
@@ -166,8 +151,20 @@
     color: #E3E3E3;
 }
 
+.stepTwo_active{
+        width: 121px;
+        height: 64px;
+        margin-top: 20px;
+        margin-left:80px;
+        font-family: 'Jost';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 44px;
+        line-height: 64px;
+        color: #383838;
+}
+
 .lineTwo{
-    position: absolute;
     width: 767px;
     height: 0px;
     left: 100px;
@@ -177,11 +174,9 @@
 }
 
 .stepThree{
-    position: absolute;
     width: 120px;
     height: 64px;
-    left: 81px;
-    top: 567px;
+    margin-left: 75px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -195,25 +190,96 @@
   }
 
   .stepUnderline {
-    position: absolute;
     width: 116px;
     height: 8px;
-    left: 80px;
-    top: 263px;
+    margin-left:86px;
     border-radius: 100px;
     background-color: var(--underline-color);
   }
 
   .logo{
-    position: absolute;
     width: 146.95px;
     height: 22.5px;
-    left: 220px;
-    top: 950.18px;
   }
 
   .sunLogo{
-    position: absolute;
-    left: 4.17%;
-    top: 19.17%;
+    display: flex;
+    margin-left: 10.17px;
+    margin-top: 5.17px;
+  }
+
+  .entries{
+    width: 185px;
+    height: 32px;
+    margin-left:30px;
+    margin-top:10px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  .timeOff{
+    width: 192px;
+    height: 32px;
+    margin-left: 30px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  .checkedIn{
+    height: 32px;
+    margin-left: 30px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    color: #000000;
+  }
+
+  .lineStep{
+    width: 378px;
+    height: 0px;
+    margin-left: 30px;
+    margin-top: 30px;
+    border: 1px solid #E6E6E6;
+    transform: rotate(180deg);
+  }
+
+  .followSteps{
+    width: 378px;
+    height: 96px;
+    margin-left: 30px;
+    margin-top: 30px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 32px;
+    text-align: center;
+    color: #000000;
+  }
+
+   input[type="radio"] {
+       appearance: none;
+       width: 41px;
+       height: 41px;
+       border-radius: 50%;
+       border:  1px solid #E3E3E3;
+       background-color:  #FFFFFF;;
+  }
+  input[type="radio"]:checked {
+    background-color: var(--underline-color);
+  }
+
+
+  .stepOneContainer{
+      display:flex;
   }

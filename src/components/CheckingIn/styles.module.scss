@@ -1,5 +1,4 @@
 .secondStep{
-    position: absolute;
     width: 121px;
     height: 64px;
     left: -186px;
@@ -13,11 +12,10 @@
 }
 
 .wonderful{
-    position: absolute;
     width: 589px;
     height: 35px;
-    left: 20px;
-    top: 229px;
+    margin-left: 0px;
+    margin-top: 90px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -30,7 +28,6 @@
     box-sizing: border-box;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
-    position: absolute;
     width: 250px;
     height: 35px;
     left: 50px;
@@ -44,7 +41,6 @@
 }
 
 .thirdStep{
-    position: absolute;
     width: 120px;
     height: 64px;
     left: -185px;

@@ -1,19 +1,4 @@
-.stepTwo{
-    position: absolute;
-    width: 121px;
-    height: 64px;
-    top: 232px;
-    right: 644px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 64px;
-    color: #383838;
-}
-
 .notes{
-    position: absolute;
     width: 558px;
     height: 35px;
     left: 30px;
@@ -27,12 +12,12 @@
 }
 
 .diaryButton{
+    display: flex;
     box-sizing: border-box;
-    position: absolute;
     width: 252px;
     height: 61px;
-    left: 35px;
-    top: 290px;
+    margin-left: 15px;
+    margin-top: 70px;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
     font-family: 'Jost';
@@ -43,7 +28,6 @@
 }
 
 .thirdStep{
-    position: absolute;
     width: 120px;
     height: 64px;
     left: -185px;
@@ -88,4 +72,16 @@
     height: 61px;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
+}
+
+.anxious{
+     width: 558px;
+     height: 35px;
+     margin-left: 170px;
+     font-family: 'Jost';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 24px;
+     line-height: 35px;
+     color: #383838;
 }
