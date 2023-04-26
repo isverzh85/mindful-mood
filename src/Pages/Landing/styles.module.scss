@@ -1,5 +1,12 @@
+.landingPage{
+    display:flex;
+    flex-direction:column;
+}
+
+.greetingAndStepsContainer{
+}
+
 .greetingContainer{
-    display: flex;
     height: 64px;
     margin-left: 100px;
     margin-top:60px;
@@ -9,11 +16,7 @@
 }
 
 .greetingTwo{
-    display: inline-block;
-    width: 310px;
-    height: 49px;
-    margin-left: 20px;
-    margin-bottom:50px;
+    margin-left: 30px;
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
@@ -21,8 +24,9 @@
 }
 
 .date{
+    vertical-align:middle;
+    margin-left: 30px;
     height: 49px;
-    margin-left: 170px;
     font-weight: 400;
     font-size: 34px;
     line-height: 49px;
@@ -31,8 +35,8 @@
 
 .step{
     height: 64px;
-    margin-left: 85px;
-    margin-top: 20px;
+    margin-top: 50px;
+    margin-left:100px;
     font-weight: 400;
     font-size: 44px;
     line-height: 64px;
@@ -41,7 +45,6 @@
 .tracking{
     width: 168px;
     height: 70px;
-    margin-left: 80px;
     margin-top: 20px;
     font-weight: 400;
     font-size: 24px;
@@ -50,8 +53,6 @@
 }
 
 .anxious{
-    width: 482px;
-    height: 35px;
     margin-left: 10px;
     font-weight: 400;
     font-size: 24px;
@@ -95,7 +96,7 @@
     align-items: center;
     width: 590px;
     height: 1024px;
-    margin-left:900px;
+    margin-left:150px;
     background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color)  100%);
 }
 
@@ -103,8 +104,8 @@
     box-sizing: border-box;
     width: 582px;
     height: 172px;
-    margin-left:270px;
-    margin-bottom:50px;
+    margin-left:130px;
+    margin-top:130px;
     padding:15px;
     border: 1px solid var(--underline-color);
     border-radius: 8px;
@@ -113,7 +114,7 @@
 .notes{
     display:flex;
     margin-bottom:30px;
-    width: 284px;
+    width: 304px;
     height: 70px;
     font-weight: 400;
     font-size: 24px;
@@ -125,16 +126,17 @@
 .notesContainerTwo{
     width: 434px;
     height: 754px;
-    left: 72px;
-    top: 165px;
+    margin-left: 20px;
+    margin-top: 30px;
     background: #FFFFFF;
     border-radius: 8px;
 }
 
 .lineOne{
-    width: 767px;
+    width: 890px;
     height: 0px;
-    margin-left:85px;
+    margin-left:106px;
+    margin-top:56px;
     border: 1px solid #E3E3E3;
     transform: rotate(180deg);
 }
@@ -142,7 +144,8 @@
 .stepTwo{
     width: 121px;
     height: 64px;
-    margin-left:75px;
+    margin-left:95px;
+    margin-top:45px;
     font-family: 'Jost';
     font-style: normal; 
     font-weight: 400;
@@ -165,10 +168,9 @@
 }
 
 .lineTwo{
-    width: 767px;
+    width: 890px;
     height: 0px;
-    left: 100px;
-    top: 537px;
+    margin-left: 100px;
     border: 1px solid #E3E3E3;
     transform: rotate(180deg);
 }
@@ -176,7 +178,8 @@
 .stepThree{
     width: 120px;
     height: 64px;
-    margin-left: 75px;
+    margin-left: 95px;
+    margin-top:45px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -192,7 +195,7 @@
   .stepUnderline {
     width: 116px;
     height: 8px;
-    margin-left:86px;
+    margin-left:1px;
     border-radius: 100px;
     background-color: var(--underline-color);
   }
@@ -200,12 +203,12 @@
   .logo{
     width: 146.95px;
     height: 22.5px;
+    margin-top:35px;
   }
 
   .sunLogo{
-    display: flex;
-    margin-left: 10.17px;
-    margin-top: 5.17px;
+    margin-right:10px;
+    vertical-align: middle;
   }
 
   .entries{
@@ -278,8 +281,35 @@
   input[type="radio"]:checked {
     background-color: var(--underline-color);
   }
-
+  .contentContainer{
+      display:flex;
+  }
 
   .stepOneContainer{
-      display:flex;
+    display: flex;
+    align-items: center;
+  }
+
+  .stepOneWrapper{
+    // display: flex;
+  }
+
+  .stepTwoUnderline{
+    width: 116px;
+    height: 8px;
+    margin-left: 100px;
+    margin-top: 3px;
+    margin-bottom:60px;
+    background: #8E8E8E;
+    border-radius: 100px;
+  }
+
+  .stepThreeUnderline{
+    width: 116px;
+    height: 8px;
+    margin-left: 100px;
+    margin-top: 3px;
+    margin-bottom:60px;
+    background: #8E8E8E;
+    border-radius: 100px;
   }
