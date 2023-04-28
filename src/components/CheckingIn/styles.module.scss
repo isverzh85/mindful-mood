@@ -1,8 +1,6 @@
 .secondStep{
     width: 121px;
     height: 64px;
-    left: -186px;
-    top: 235px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -12,26 +10,22 @@
 }
 
 .wonderful{
-    width: 589px;
-    height: 35px;
-    margin-left: 0px;
-    margin-top: 90px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #383838;
+    margin-left:180px;
+    margin-top: 90px;
+    margin-bottom:30px;
 }
 
 .buttonDiaryEntry{
     box-sizing: border-box;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
-    width: 250px;
-    height: 35px;
-    left: 50px;
-    top: 300px;
+    margin-left:170px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
@@ -43,8 +37,6 @@
 .thirdStep{
     width: 120px;
     height: 64px;
-    left: -185px;
-    top: 365px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -54,11 +46,6 @@
 }
 
 .todayGoals{
-    position: absolute;
-    width: 558px;
-    height: 70px;
-    left: 25px;
-    top: 350px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -68,9 +55,6 @@
 }
 
 .continuedDiary{
-    position: absolute;
-    width: 231px;
-    height: 35px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
@@ -78,11 +62,6 @@
     line-height: 35px;
     color: var(--underline-color);
     box-sizing: border-box;
-    position: absolute;
-    width: 291px;
-    height: 61px;
-    left: 60px;
-    top: 470px;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
 }

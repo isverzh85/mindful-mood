@@ -12,7 +12,9 @@ export const LandingPage = () => {
     const [color, setColor] = useState('');
     const [feelings, setFeelings] =useState('');
     const [currentStep, setCurrentStep] = useState(1);
-    const [showStepTwo, setShowStepTwo] = useState(true);
+    const [showStepTwo, setShowStepTwo] = useState(false);
+    const [isAnxiousChecked, setIsAnxiousChecked] = useState(false);
+
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -27,17 +29,23 @@ export const LandingPage = () => {
     }
   }, []);
 
+  useEffect(() => {
+    setShowStepTwo(feelings !== "" || isAnxiousChecked);
+  }, [feelings, isAnxiousChecked]);
+
       const handleFeelingChange = (event) => {
         if (event.target.value === "anxious") {
           setFeelings("anxious");
-          setCurrentStep(2); 
+          setIsAnxiousChecked(true);
           setShowStepTwo(true);
+          setCurrentStep(2); 
         } else if (event.target.value === "checkingIn") {
             setFeelings(event.target.value);
             setCurrentStep(2);
-            setShowStepTwo(false);
-          }
-        };
+            setIsAnxiousChecked(false);
+            setShowStepTwo(true);
+        }
+       };
         
       return (
         <div className={styles.landingPage}>
@@ -66,6 +74,7 @@ export const LandingPage = () => {
                                              className={styles.anxiousButton}
                                              checked={feelings === "anxious"} 
                                              onChange={handleFeelingChange} 
+                                             onClick={() => setCurrentStep(2)}
                                        />
                                     </label>
                                     <span className={styles.anxious}>I'm feeling anxious/depressed or otherwise off.</span>
@@ -76,31 +85,35 @@ export const LandingPage = () => {
                                                value="checkingIn" 
                                                checked={feelings === "checkingIn"} 
                                                onChange={handleFeelingChange}
+                                               onClick={() => setCurrentStep(2)}
                                         />
                                     </label>
                                       <span className={styles.checkingIn}>I'm just checking in with my body.</span>
                                   </div>
                               </div>
                                 <div className={styles.lineOne}></div>
-                                <div className={`${styles.stepTwo} ${showStepTwo && feelings !== "anxious" ? styles.grayedOut : ""}`}>Step 2</div>  
-                                <div className={styles.stepTwoUnderline}></div>
+                                  <div className={styles.stepTwoContainer}>
+                                    <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOut}`}>Step 2
+                                      <div className={styles.stepTwoUnderline}></div>
+                                    </div>
                                 {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
                                        } 
                                 {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />}
-                                <div className={styles.lineTwo}></div>
-                                <div className={styles.stepThree}>Step 3</div>  
-                                <div className={styles.stepThreeUnderline}></div>
+                                </div>
+                                   <div className={styles.lineTwo}></div>
+                                     <div className={styles.stepThree}>Step 3</div>  
+                                       <div className={styles.stepThreeUnderline}></div>
                             </div>
                         <div className={styles.notesContainer}>
                            <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
-                           <img src={csv} alt="csvLogo" className={styles.csv} /> 
-                           <div className={styles.notesContainerTwo}>
-                           <div className={styles.entries}>Total entries written: </div>
-                           <div className={styles.timeOff}>Times you've felt off: </div>
-                           <div className={styles.checkedIn}>Times you've just checked in: </div>
-                           <div className={styles.lineStep}></div>
-                           <div className={styles.followSteps}>Follow the steps to fill in a diary entry and you’ll be able to see a summary of your check-ins here.</div>
-                      </div>
+                             <img src={csv} alt="csvLogo" className={styles.csv} /> 
+                               <div className={styles.notesContainerTwo}>
+                                 <div className={styles.entries}>Total entries written: </div>
+                                   <div className={styles.timeOff}>Times you've felt off: </div>
+                                    <div className={styles.checkedIn}>Times you've just checked in: </div>
+                                      <div className={styles.lineStep}></div>
+                                         <div className={styles.followSteps}>Follow the steps to fill in a diary entry and you’ll be able to see a summary of your check-ins here.</div>
+                             </div>
                          <img src={logo} alt="logo" className={styles.logo} />
                   </div>
            </div>

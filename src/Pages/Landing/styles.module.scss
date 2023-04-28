@@ -3,9 +3,6 @@
     flex-direction:column;
 }
 
-.greetingAndStepsContainer{
-}
-
 .greetingContainer{
     height: 64px;
     margin-left: 100px;
@@ -290,16 +287,9 @@
     align-items: center;
   }
 
-  .stepOneWrapper{
-    // display: flex;
-  }
-
   .stepTwoUnderline{
     width: 116px;
     height: 8px;
-    margin-left: 100px;
-    margin-top: 3px;
-    margin-bottom:60px;
     background: #8E8E8E;
     border-radius: 100px;
   }
@@ -312,4 +302,9 @@
     margin-bottom:60px;
     background: #8E8E8E;
     border-radius: 100px;
+  }
+
+  .stepTwoContainer {
+    display:flex;
+    align-items:baseline;
   }

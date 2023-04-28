@@ -12,9 +12,7 @@
 
 .hardFeeling{
      width: 516px;
-     height: 196px;
-     margin-left: 90px;
-     margin-top: 40px;
+     margin-top: 60px;
      font-family: 'Jost';
      font-style: normal;
      font-weight: 400;
@@ -25,9 +23,7 @@
 
 .finishWriting{
       display:flex;
-      height: 49px;
-      margin-left: 90px;
-      margin-top: 200px;
+      margin-top: 250px;
       font-family: 'Jost';
       font-style: normal;
       font-weight: 400;
@@ -37,6 +33,7 @@
 }
 
 .separateLine{
+    width: 2650px;
       border: 1px solid #E3E3E3;
       transform: rotate(90deg);
 }
@@ -54,5 +51,8 @@
     display:flex;
     margin-left: 80px;
     margin-top: 60px;
+}
 
+.oneContainer{
+    // display:flex;
 }
