@@ -14,7 +14,7 @@ export const LandingPage = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [showStepTwo, setShowStepTwo] = useState(false);
     const [isAnxiousChecked, setIsAnxiousChecked] = useState(false);
-
+    const [isWritingFinished, setIsWritingFinished] = useState(false);
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -26,25 +26,49 @@ export const LandingPage = () => {
         const savedColor = localStorage.getItem("color");
         if (savedColor) {
             setColor(savedColor);
-    }
+        }
+        const savedFeelings = localStorage.getItem("feelings");
+        if (savedFeelings) {
+            setFeelings(savedFeelings);
+        }
+        const savedCurrentStep = localStorage.getItem("currentStep");
+        if (savedCurrentStep) {
+            setCurrentStep(parseInt(savedCurrentStep));
+        }
+        const savedIsAnxiousChecked = localStorage.getItem("isAnxiousChecked");
+        if (savedIsAnxiousChecked) {
+            setIsAnxiousChecked(savedIsAnxiousChecked === "true");
+        }
+
+
+
+
   }, []);
 
-  useEffect(() => {
-    setShowStepTwo(feelings !== "" || isAnxiousChecked);
-  }, [feelings, isAnxiousChecked]);
+    useEffect(() => {
+      if (isAnxiousChecked || feelings === "checkingIn") {
+          setShowStepTwo(true);
+          setCurrentStep(2);
+      } else {
+          setShowStepTwo(false);
+          setCurrentStep(1);
+    }
+  }, [isAnxiousChecked, feelings]);
 
-      const handleFeelingChange = (event) => {
+    const handleFeelingChange = (event) => {
         if (event.target.value === "anxious") {
           setFeelings("anxious");
           setIsAnxiousChecked(true);
-          setShowStepTwo(true);
           setCurrentStep(2); 
         } else if (event.target.value === "checkingIn") {
             setFeelings(event.target.value);
-            setCurrentStep(2);
             setIsAnxiousChecked(false);
-            setShowStepTwo(true);
-        }
+            setCurrentStep(2);
+         }
+       };
+
+       const handleWritingFinished = () => {
+        setIsWritingFinished(true);
        };
         
       return (

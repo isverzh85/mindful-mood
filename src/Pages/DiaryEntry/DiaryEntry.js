@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 
 export const DiaryEntry = () => {
     const [name, setName] = useState('');
+    const [bigFeelings, setBigFeelings] = useState('');
+    const [painAreas, setPainAreas] = useState([]);
     const [currentStep, setCurrentStep] = useState(1);
 
 
@@ -13,6 +15,14 @@ export const DiaryEntry = () => {
         if (savedName) {
           setName(savedName);
         }
+        const savedBigFeelings = localStorage.getItem("bigFeelings");
+        if (savedBigFeelings) {
+            setBigFeelings(savedBigFeelings);
+        }
+        const savedPainAreas = localStorage.getItem("painAreas");
+        if (savedPainAreas) {
+            setPainAreas(JSON.parse(savedPainAreas));
+        }
     }, []);
 
     const handleFinishWriting = () => {
@@ -20,15 +30,26 @@ export const DiaryEntry = () => {
     }
 
 return(
-        <div className={styles.diaryPage}>
-            <div className={styles.diaryContainer}>
-               <div className={styles.headingContainer}>
-                  <div className={styles.great}>You're doing great, {name}.
-                  <div className={styles.hardFeeling}>It's hard feeling the way you're feeling in this moment. Let's break it down as a way to help soothe those feelings.</div>
+      <div className={styles.diaryPage}>
+        <div className={styles.contentContainer}>
+          <div className={styles.diaryContainer}>
+            <div className={styles.headingContainer}>
+              <div className={styles.great}>You're doing great, {name}.
+              </div>
+                <div className={styles.hardFeeling}>It's hard feeling the way you're feeling in this moment. Let's break it down as a way to help soothe those feelings.
                   <Link to="/landing-page" className={styles.finishWriting}>Finish Writing.</Link>
-                  <div className={styles.separateLine}></div>
-                  </div>
-                      <div className={styles.oneContainer}>
+                </div>
+                  {/* <div className={styles.separateLine}></div> */}
+                </div>
+                <div className={styles.separateLine}></div>
+
+                {/* <div className={styles.radioButtonQuestions}> */}
+                {/* <div className={styles.questionsContainer}> */}
+
+            </div>
+            <div className={styles.radioButtonQuestions}>
+              <div className={styles.questionsContainer}>
+                 <div className={styles.oneContainer}>
                          <div className={styles.one}>1.</div>
                             <div className={styles.bigFeelings}>How “big” are your feelings right now?</div>
                             <div className={styles.contentFeelings}>“Small” feelings are not any less painful than “big” feelings. “Small” feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you’re so used to feeling like your feelings don’t matter.
@@ -63,6 +84,11 @@ return(
                                    5
                      </label>
                    </div>
+                </div>
+            </div>
+
+
+
                    <div className={styles.secondContainer}>
                        <div className={styles.two}>2.</div>
                        <div className={styles.pain}>Starting from your head to your shoulders, check all the areas where you feel pain, discomfort, or a general feeling of upset.</div>
@@ -151,7 +177,6 @@ return(
                                 />
                                   Throat
                             </label>
-                       </div>
                    </div>
                    <div className={styles.thirdContainer}>
                       <div className={styles.third}>3.</div>
@@ -304,15 +329,87 @@ return(
                                 />
                                   Dry Mouth
                             </label>
-
-
                            </div>
                         </div>
-
-
-
+                        <div className={styles.fifthContainer}>
+                          <div className={styles.fifth}>5.</div>
+                             <div className={styles.moment}>Take a moment before moving down to your hips, thighs, legs and feet. Note which areas are feeling uncomfortable, tight, painful or even foreign.</div>
+                               <div className={styles.checkboxes}>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="hips" 
+                                            value="hips" 
+                                       />
+                                          Hips
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="intimateAreas" 
+                                            value="intimateAreas" 
+                                       />
+                                          Intimate Areas
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="thighs" 
+                                            value="thighs" 
+                                       />
+                                          Thighs
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="knees" 
+                                            value="knees" 
+                                       />
+                                          Knees
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="feet" 
+                                            value="feet" 
+                                       />
+                                          Feet
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="buttocks" 
+                                            value="buttocks" 
+                                       />
+                                          Buttocks
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="calves" 
+                                            value="calves" 
+                                       />
+                                          Calves
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="ankles" 
+                                            value="ankles" 
+                                       />
+                                          Ankles
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="shin" 
+                                            value="shin" 
+                                       />
+                                          Shin
+                                  </label>
+                                  <label>
+                                     <input type="checkbox" 
+                                            name="toes" 
+                                            value="toes" 
+                                       />
+                                          Toes
+                                  </label>
+                            </div>
+                        </div>
                 </div>
-            </div>
+            
+        </div>
         </div>
       )
     }

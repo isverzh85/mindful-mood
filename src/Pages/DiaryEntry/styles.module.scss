@@ -1,7 +1,8 @@
+.diaryPage{
+    // display: flex;
+}
+
 .great{
-     height: 64px;
-     margin-left: 80px;
-     margin-top: 60px;
      font-family: 'Jost';
      font-style: normal;
      font-weight: 700;
@@ -11,8 +12,9 @@
 }
 
 .hardFeeling{
-     width: 516px;
+     width: 500px;
      margin-top: 60px;
+     margin-left: 30px;
      font-family: 'Jost';
      font-style: normal;
      font-weight: 400;
@@ -33,9 +35,10 @@
 }
 
 .separateLine{
-    width: 2650px;
+      width: 1300px;
       border: 1px solid #E3E3E3;
       transform: rotate(90deg);
+      display:table-cell;
 }
 
 .one{
@@ -48,11 +51,56 @@
 }
 
 .headingContainer{
-    display:flex;
     margin-left: 80px;
     margin-top: 60px;
+    // display: flex;
+    // align-items: center;
+
+    flex: 1;
 }
 
 .oneContainer{
     // display:flex;
 }
+
+.diaryContainer{
+// flex:1;
+}
+
+.questionsContainer{
+    // display: flex;
+    // flex: 1;
+}
+
+.contentContainer {
+    display: flex;
+    // flex-direction: row;
+  }
+
+  .radioButtonQuestions{
+      flex:1;
+  }
+
+  .bigFeelings{
+    width: 490px;
+    margin-left: 70px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;     
+    color: #383838;
+  }
+
+  .contentFeelings{
+    width: 620px;
+    height: 142px;
+    margin-left: 720px;
+    margin-top: 135px; 
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #383838;
+  }
