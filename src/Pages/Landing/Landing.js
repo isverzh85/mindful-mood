@@ -39,10 +39,6 @@ export const LandingPage = () => {
         if (savedIsAnxiousChecked) {
             setIsAnxiousChecked(savedIsAnxiousChecked === "true");
         }
-
-
-
-
   }, []);
 
     useEffect(() => {
@@ -65,6 +61,7 @@ export const LandingPage = () => {
             setIsAnxiousChecked(false);
             setCurrentStep(2);
          }
+         setCurrentStep(2);
        };
 
        const handleWritingFinished = () => {
@@ -117,7 +114,9 @@ export const LandingPage = () => {
                               </div>
                                 <div className={styles.lineOne}></div>
                                   <div className={styles.stepTwoContainer}>
-                                    <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOut}`}>Step 2
+
+                                    <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
+                                            Step 2
                                       <div className={styles.stepTwoUnderline}></div>
                                     </div>
                                 {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 

@@ -25,6 +25,27 @@ export const DiaryEntry = () => {
         }
     }, []);
 
+    useEffect(() => {
+        if (currentStep === 3) {
+          localStorage.setItem("bigFeelings", bigFeelings);
+        }
+      }, [currentStep, bigFeelings]);
+
+      useEffect(() => {
+        const savedFeelings = localStorage.getItem("feelings");
+        if (savedFeelings) {
+          setBigFeelings(savedFeelings);
+        } else {
+          setBigFeelings("");
+        }
+      }, []);
+
+      useEffect(() => {
+        if (currentStep === 2) {
+          localStorage.setItem("bigFeelings", bigFeelings);
+        }
+      }, [currentStep, bigFeelings]);
+
     const handleFinishWriting = () => {
         setCurrentStep(3);
     }
@@ -37,8 +58,12 @@ return(
               <div className={styles.great}>You're doing great, {name}.
               </div>
                 <div className={styles.hardFeeling}>It's hard feeling the way you're feeling in this moment. Let's break it down as a way to help soothe those feelings.
+                {currentStep < 3 ? (
+
                   <Link to="/landing-page" className={styles.finishWriting}>Finish Writing.</Link>
-                </div>
+                  ) : null}
+
+                  </div>
                   {/* <div className={styles.separateLine}></div> */}
                 </div>
                 <div className={styles.separateLine}></div>
