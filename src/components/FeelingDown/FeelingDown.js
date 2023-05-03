@@ -21,14 +21,15 @@ export const FeelingDown= ({ currentStep, feelings }) => {
 
     return(
         <div className={styles.feelingDownContainer}>
-            <div className={`${styles.secondStepContainer} ${currentStep === 2 && feelings === "anxious" ? styles.active : ''}`}>
-                    <div className={styles.anxious}>
-                            I'm sorry to hear that. Let's take note of those feelings.
-                            <Link to="/diary" className={styles.diaryButton}>Write diary entry</Link>
-                        </div>
-                    <div className={styles.anxiousContainer}>
-                  </div>
+          <div className={`${styles.secondStepContainer} ${currentStep === 2 && feelings === "anxious" ? styles.active : ''}`}>
+            <div className={styles.anxiousContainer}>
+              <div className={styles.anxious}>I'm sorry to hear that. Let's take note of those feelings.
                 </div>
+                  <Link to="/diary" className={styles.diaryButton}>Write diary entry</Link>
+                 </div>
+                    <div className={styles.diaryEntryContainer}>
+                     </div> 
+                 </div>
                 {isDiaryEntryFinished && currentStep === 3 && (
                   <div className={styles.thirdStepContainer}>
                     <div className={styles.thirdStep}>Step 3</div>

@@ -117,8 +117,8 @@ export const LandingPage = () => {
 
                                     <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
                                             Step 2
-                                      <div className={styles.stepTwoUnderline}></div>
-                                    </div>
+                                            <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? styles.underlineColor : ""}`}></div>
+                                      </div>
                                 {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
                                        } 
                                 {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />}

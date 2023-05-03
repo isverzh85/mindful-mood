@@ -1,17 +1,14 @@
 .diaryButton{
-    display: flex;
     box-sizing: border-box;
-    width: 252px;
-    height: 61px;
-    margin-top: 40px;
-    margin-bottom: 40px;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
+    margin-left: 80px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
     line-height: 35px;
+    color: var(--underline-color);
 }
 
 .thirdStep{
@@ -67,10 +64,11 @@
     line-height: 35px;
     color: #383838;
     margin-left:80px;
+    margin-bottom:40px;
 }
 
 .anxiousContainer{
-    display: flex;
+    margin-bottom:40px
 }
 
 .secondStepContainer{
@@ -84,3 +82,9 @@
 .secondStepContainer.active{
     opacity: 1;
 }
+
+.diaryEntryContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }

@@ -293,6 +293,10 @@
     border-radius: 100px;
   }
 
+//   .stepTwoUnderline:active{
+//       color: var(--underline-color);
+//   }
+
   .stepThreeUnderline{
     width: 116px;
     height: 8px;
@@ -314,3 +318,6 @@
     opacity: 1; 
   }
 
+  .underlineSelected {
+       color: var(--underline-color);
+}
