@@ -25,7 +25,9 @@ export const FeelingDown= ({ currentStep, feelings }) => {
             <div className={styles.anxiousContainer}>
               <div className={styles.anxious}>I'm sorry to hear that. Let's take note of those feelings.
                 </div>
-                  <Link to="/diary" className={styles.diaryButton}>Write diary entry</Link>
+                   <div className={styles.diaryButtonContainer}>
+                     <Link to="/diary" className={styles.diaryButton}>Write diary entry</Link>
+                   </div>
                  </div>
                     <div className={styles.diaryEntryContainer}>
                      </div> 

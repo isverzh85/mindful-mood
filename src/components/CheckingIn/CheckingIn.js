@@ -9,7 +9,9 @@ const CheckingIn= ({ currentStep, feelings }) => {
             <div className={styles.messageContainer}>
                  <div className={styles.wonderful}>That's wonderful. Take this moment to be in tune with you.
                  </div>
-                 <Link to="/diary" className={styles.buttonDiaryEntry}>Write diary entry</Link>
+                 <div className={styles.buttonDiaryEntryContainer}>
+                  <Link to="/diary" className={styles.buttonDiaryEntry}>Write diary entry</Link>
+              </div>
              </div>
              <div className={styles.checkingInContainer}>
           </div>

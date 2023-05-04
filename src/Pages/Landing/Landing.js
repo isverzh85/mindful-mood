@@ -114,33 +114,34 @@ export const LandingPage = () => {
                               </div>
                                 <div className={styles.lineOne}></div>
                                   <div className={styles.stepTwoContainer}>
-
                                     <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
                                             Step 2
                                             <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? styles.underlineColor : ""}`}></div>
                                       </div>
-                                {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
-                                       } 
-                                {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />}
-                                </div>
-                                   <div className={styles.lineTwo}></div>
-                                     <div className={styles.stepThree}>Step 3</div>  
-                                       <div className={styles.stepThreeUnderline}></div>
-                            </div>
-                        <div className={styles.notesContainer}>
-                           <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
-                             <img src={csv} alt="csvLogo" className={styles.csv} /> 
-                               <div className={styles.notesContainerTwo}>
-                                 <div className={styles.entries}>Total entries written: </div>
-                                   <div className={styles.timeOff}>Times you've felt off: </div>
-                                    <div className={styles.checkedIn}>Times you've just checked in: </div>
-                                      <div className={styles.lineStep}></div>
-                                         <div className={styles.followSteps}>Follow the steps to fill in a diary entry and you’ll be able to see a summary of your check-ins here.</div>
-                             </div>
-                         <img src={logo} alt="logo" className={styles.logo} />
-                  </div>
-           </div>
-        </div>
-      );
-}
+                                        {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
+                                        } 
+                                        {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />
+                                        }
+                                    </div>
+                                      <div className={styles.lineTwo}></div>
+                                        <div className={styles.stepThree}>Step 3</div>  
+                                           <div className={styles.stepThreeUnderline}></div>
+                               </div>
+                                   <div className={styles.notesContainer}>
+                                     <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
+                                        <img src={csv} alt="csvLogo" className={styles.csv} /> 
+                                          <div className={styles.notesContainerTwo}>
+                                             <div className={styles.entries}>Total entries written: </div>
+                                                <div className={styles.timeOff}>Times you've felt off: </div>
+                                                   <div className={styles.checkedIn}>Times you've just checked in: </div>
+                                                   <div className={styles.lineStep}></div>
+                                                   <div className={styles.followSteps}>Follow the steps to fill in a diary entry and you’ll be able to see a summary of your check-ins here.</div>
+                                                </div>
+                                                <img src={logo} alt="logo" className={styles.logo} />
+                                         </div>
+                                     </div>
+                                  </div>
+                    );
+          }
+          
 export default LandingPage
