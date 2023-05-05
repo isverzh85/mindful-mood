@@ -41,6 +41,8 @@ export const HomePage = () => {
         setColor(newColor.hex);
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
+        localStorage.setItem("color", newColor.hex);
+
         setShowPicker(false); 
       };
     

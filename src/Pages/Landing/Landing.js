@@ -25,6 +25,7 @@ export const LandingPage = () => {
         setDate(currentDate);
         const savedColor = localStorage.getItem("color");
         if (savedColor) {
+            console.log(savedColor)
             setColor(savedColor);
         }
         const savedFeelings = localStorage.getItem("feelings");
@@ -61,13 +62,12 @@ export const LandingPage = () => {
             setIsAnxiousChecked(false);
             setCurrentStep(2);
          }
-         setCurrentStep(2);
-       };
+        };
 
        const handleWritingFinished = () => {
         setIsWritingFinished(true);
        };
-        
+        console.log("currentStep", currentStep, color, "color")
       return (
         <div className={styles.landingPage}>
           <div className={styles.contentContainer}>
@@ -116,8 +116,9 @@ export const LandingPage = () => {
                                   <div className={styles.stepTwoContainer}>
                                     <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
                                             Step 2
-                                            <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? styles.underlineColor : ""}`}></div>
-                                      </div>
+                                            <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? styles.underlineColor : ""}`} style={{background: currentStep>=2 ? color:""} }>
+                                            </div>
+                                            </div>
                                         {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
                                         } 
                                         {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />
@@ -143,5 +144,5 @@ export const LandingPage = () => {
                                   </div>
                     );
           }
-          
+
 export default LandingPage
