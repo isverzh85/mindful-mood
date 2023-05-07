@@ -84,7 +84,7 @@ body, html  {
 .separateLineTwo{
    width: 570px;
    height: 0px;
-   margin-left: 30px;
+   transform:translateX(-80px);
    margin-top: 30px;
    border: 1px solid #4E4E4E;
 }
@@ -117,3 +117,6 @@ body, html  {
   margin-bottom:70px;
 }
 
+.colorContainr{
+  display: flex;
+}

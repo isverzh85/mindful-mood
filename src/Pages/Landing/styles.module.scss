@@ -92,7 +92,7 @@
     justify-content: center;
     align-items: center;
     width: 590px;
-    height: 1024px;
+    height: 904px;
     margin-left:150px;
     background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color)  100%);
 }
@@ -203,7 +203,7 @@
   .logo{
     width: 146.95px;
     height: 22.5px;
-    margin-top:35px;
+    margin-top:15px;
   }
 
   .sunLogo{
@@ -321,3 +321,7 @@
   .underlineSelected {
        color: var(--underline-color);
 }
+
+.selectedColor {
+    background-color: var(--underline-color);
+  }

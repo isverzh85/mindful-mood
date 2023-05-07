@@ -7,23 +7,23 @@ import { Link } from 'react-router-dom';
 export const HomePage = () => {
     const [name, setName] = useState('');
     const [color, setColor] = useState('');
-
     const [inputColor, setInputColor] = useState('');
     const [showPicker, setShowPicker] = useState(true);
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
         if (savedName) {
-            console.log('savedName')
             setName(savedName);
         }
         const savedColor = localStorage.getItem("color");
-        if (savedColor) {
+        if (savedColor && color === '') {
             setColor(savedColor);
             setInputColor(savedColor);
             document.documentElement.style.setProperty('--text-color', savedColor);
+        } else {
+            localStorage.removeItem("color");
         }
-    }, []);
+    }, [color]);
 
     const handleNameChange = (event) => {
         const newName = event.target.value;
@@ -42,7 +42,6 @@ export const HomePage = () => {
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
         localStorage.setItem("color", newColor.hex);
-
         setShowPicker(false); 
       };
     
@@ -68,7 +67,7 @@ return (
           </div>
             <div className={styles.colorInputContainer}>
             <div className={styles.colorLabelContainer}>
-          <div className={styles.favoriteColor}>What's your favorite <span style={{ color: inputColor }}>color</span>?
+          <div className={styles.favoriteColor}>What's your favorite <span style={{ color: inputColor }}><span style={{color: color}}>color</span></span>?
             <div style={{  backgroundColor: color, height: '52px', marginLeft:'100px', marginTop:'30px', width: '52px', borderRadius: '8px' }}>
             <div className={styles.colorContainer}>
            <input 
@@ -92,12 +91,11 @@ return (
                   />
             )}
             </div>
-          
             <Link to="/landing-page" className={styles.finish}>Finish</Link>
         </div>
     </div>
-</div>
-  )
+  </div>
+ )
 }
 
 export default HomePage;
