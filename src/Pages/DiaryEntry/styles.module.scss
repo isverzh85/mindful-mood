@@ -1,5 +1,21 @@
-.diaryPage{
-    // display: flex;
+.diaryContainer{
+    display: flex;;
+}
+
+.headingContainer{
+    margin-left: 80px;
+    margin-top: 60px;
+    margin-right:150px;
+}
+
+.radioButtonQuestions{ 
+    margin:65px;
+}
+
+.separateLine{
+    width: 1300px;
+    border: 1px solid #E3E3E3;
+    transform: rotate(90deg);
 }
 
 .great{
@@ -34,13 +50,6 @@
       color: var(--underline-color);
 }
 
-.separateLine{
-      width: 1300px;
-      border: 1px solid #E3E3E3;
-      transform: rotate(90deg);
-      display:table-cell;
-}
-
 .one{
     display: contents;
     font-family: 'Jost';
@@ -51,52 +60,25 @@
     color: var(--underline-color);
 }
 
-.headingContainer{
-    margin-left: 80px;
-    margin-top: 60px;
-    // display: flex;
-    // align-items: center;
-
-    flex: 1;
-}
-
 .oneContainer{
-    // display:flex;
+    display:flex;
+    align-items:baseline;
+    margin-bottom:40px;
 }
 
-.diaryContainer{
-// flex:1;
-}
-
-.questionsContainer{
-    // display: flex;
-    // flex: 1;
-}
-
-.contentContainer {
-    display: flex;
-    // flex-direction: row;
-  }
-
-  .radioButtonQuestions{
-      flex:1;
-  }
-
-  .bigFeelings{
-    width: 490px;
-    margin-left: 70px;
+.bigFeelings{
+    width: 495px;
+    margin-left: 20px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 29px;
     line-height: 42px;     
     color: #383838;
-  }
+ }
 
   .contentFeelings{
     width: 620px;
-    height: 142px;
-    margin-left: 60px;
     margin-top: 40px; 
     font-family: 'Jost';
     font-style: normal;
@@ -105,3 +87,79 @@
     line-height: 26px;
     color: #383838;
   }
+
+  .secondContainer{
+      display: flex;
+  }
+
+  .pain{
+     width: 621px;
+     margin-left: 15px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;
+    color: #383838;
+  }
+
+.two{
+    display:flex;
+   font-family: 'Jost';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 34px;
+   line-height: 49px;
+   color: var(--underline-color);
+ }
+
+ .checkboxes{
+     display:flex;
+     margin-left:60px;
+     margin-top:30px;
+ }
+
+ .row{
+     display:grid;
+     font-family: 'Jost';
+     font-style: normal;
+     font-weight: 400;
+     font-size: 29px;
+     line-height: 42px;
+     color: #383838;
+     margin-right:60px;
+ }
+
+ .rowTwo{
+    display:grid;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;
+   color: #383838;
+ }
+
+ .third{
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 49px;
+    color: var(--underline-color);
+ }
+
+ .torso{
+    width: 700px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;
+    color: #383838;
+ }
+
+ .thirdContainer{
+     display: flex;
+ }
+ 

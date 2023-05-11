@@ -8,7 +8,7 @@ export const DiaryEntry = () => {
     const [bigFeelings, setBigFeelings] = useState('');
     const [painAreas, setPainAreas] = useState([]);
     const [currentStep, setCurrentStep] = useState(1);
-
+    const [selectedValue, setSelectedValue] = useState('');
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -47,7 +47,8 @@ export const DiaryEntry = () => {
       }, [currentStep, bigFeelings]);
 
     const handleFinishWriting = () => {
-        setCurrentStep(3);
+      localStorage.setItem("bigFeelings", selectedValue);
+      setCurrentStep(3);
     }
 
 return(
@@ -55,34 +56,34 @@ return(
         <div className={styles.contentContainer}>
           <div className={styles.diaryContainer}>
             <div className={styles.headingContainer}>
+            <div className={styles.wrapper}>
               <div className={styles.great}>You're doing great, {name}.
               </div>
                 <div className={styles.hardFeeling}>It's hard feeling the way you're feeling in this moment. Let's break it down as a way to help soothe those feelings.
                 {currentStep < 3 ? (
-
                   <Link to="/landing-page" className={styles.finishWriting}>Finish Writing.</Link>
                   ) : null}
-
+                     <div className={styles.separateLine}></div>
                   </div>
-                  {/* <div className={styles.separateLine}></div> */}
                 </div>
-                <div className={styles.separateLine}></div>
-
-                {/* <div className={styles.radioButtonQuestions}> */}
-                {/* <div className={styles.questionsContainer}> */}
-
             </div>
-            <div className={styles.radioButtonQuestions}>
+          <div className={styles.radioButtonQuestions}>
               <div className={styles.questionsContainer}>
                  <div className={styles.oneContainer}>
-                         <div className={styles.one}>1.</div>
-                            <div className={styles.bigFeelings}>How “big” are your feelings right now?</div>
-                            <div className={styles.contentFeelings}>“Small” feelings are not any less painful than “big” feelings. “Small” feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you’re so used to feeling like your feelings don’t matter.
-                                                                    “Big” feelings are like sharing a bed with a hippo. You’re overwhelmed, and feel like you’re running a marathon even though you’re sitting still. </div>
+                         <div className={styles.one}>1.
+                            <div className={styles.bigFeelings}>How “big” are your feelings right now?
+                            <div className={styles.contentFeelings}>
+                            <p className={styles.smallFeelings}>
+                                 “Small” feelings are not any less painful than “big” feelings. “Small” feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you’re so used to feeling like your feelings don’t matter.
+                            </p>  
+                            <p className={styles.bigFeelingsParagraph}>
+                                   “Big” feelings are like sharing a bed with a hippo. You’re overwhelmed, and feel like you’re running a marathon even though you’re sitting still. 
+                            </p>
                       <label>
                          <input type="radio"
                                 name="bigFeelings"
                                 value="1"
+                                onChange={(e) => setSelectedValue(e.target.value)}
                          />
                                    1
                      </label>
@@ -108,17 +109,19 @@ return(
                          />
                                    5
                      </label>
-                   </div>
+                  </div>
                 </div>
-            </div>
-
-
-
+               </div>
+             </div>
+          </div>
                    <div className={styles.secondContainer}>
-                       <div className={styles.two}>2.</div>
+                   <div className={styles.checklistContainer}>
+                       <div className={styles.two}>2.
                        <div className={styles.pain}>Starting from your head to your shoulders, check all the areas where you feel pain, discomfort, or a general feeling of upset.</div>
+                       </div>
                        <div className={styles.checkboxes}>
-                          <label>
+                          <div className={styles.row}>
+                             <label>
                               <input type="checkbox" 
                                      name="forehead" 
                                      value="forehead" 
@@ -126,48 +129,6 @@ return(
                                 Forehead
                            </label>
                            <label>
-                               <input type="checkbox" 
-                                      name="temples" 
-                                      value="temples" 
-                                />
-                                   Temples
-                           </label>
-                           <label>
-                               <input type="checkbox" 
-                                      name="eyes" 
-                                      value="eyes" 
-                                />
-                                   Eyes
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      name="ears" 
-                                      value="ears" 
-                                />
-                                   Ears
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      name="jaw" 
-                                      value="jaw" 
-                                />
-                                   Jaw
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      name="lips" 
-                                      value="lips" 
-                                />
-                                   Lips
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      name="shoulders" 
-                                      value="shoulders" 
-                                />
-                                   Shoulders
-                            </label>
-                            <label>
                                <input type="checkbox" 
                                       name="crownHead" 
                                       value="crownHead" 
@@ -191,7 +152,7 @@ return(
                             <label>
                                <input type="checkbox" 
                                       name="decolletage" 
-                                      value="ldecolletage" 
+                                      value="decolletage" 
                                 />
                                    Decolletage
                             </label>
@@ -202,11 +163,60 @@ return(
                                 />
                                   Throat
                             </label>
-                   </div>
+                           </div>
+                             <div className={styles.rowTwo}>
+                              <label>
+                               <input type="checkbox" 
+                                      name="temples" 
+                                      value="temples" 
+                                />
+                                   Temples
+                            </label>
+                            <label>
+                               <input type="checkbox" 
+                                      name="eyes" 
+                                      value="eyes" 
+                                />
+                                   Eyes
+                            </label>
+                            <label>
+                               <input type="checkbox" 
+                                      name="ears" 
+                                      value="ears" 
+                                />
+                                   Ears
+                            </label>
+                           <label>
+                               <input type="checkbox" 
+                                      name="jaw" 
+                                      value="jaw" 
+                                />
+                                   Jaw
+                            </label>
+                            <label>
+                               <input type="checkbox" 
+                                      name="lips" 
+                                      value="lips" 
+                                />
+                                   Lips
+                            </label>
+                            <label>
+                               <input type="checkbox" 
+                                      name="shoulders" 
+                                      value="shoulders" 
+                                />
+                                   Shoulders
+                            </label>
+                         </div>
+                     </div>
+                </div>
+          </div>
                    <div className={styles.thirdContainer}>
+                      <div className={styles.checkListContainer}>
                       <div className={styles.third}>3.</div>
                          <div className={styles.torso}>Next, move down to your torso. Note, which areas are feeling uncomfortable, tight, painful, or even foreign.</div>
                           <div className={styles.checkboxes}>
+                          <div className={styles.row}>
                           <label>
                                <input type="checkbox" 
                                       name="palms" 
@@ -242,6 +252,8 @@ return(
                                 />
                                   Forearm
                             </label>
+                        </div>
+                          <div className={styles.rowTwo}>
                             <label>
                                <input type="checkbox" 
                                       name="fingers" 
@@ -278,7 +290,11 @@ return(
                                   Lower back
                             </label>
                          </div>
-                      </div>
+                       </div>
+                     </div>
+                  </div>
+
+
                       <div className={styles.fourthContainer}>
                         <div className={styles.fourth}>4.</div>
                           <div className={styles.body}>Now that you're aware of your upper body, see if you can note points of discomfort. Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to.</div>
@@ -432,9 +448,9 @@ return(
                                   </label>
                             </div>
                         </div>
+                      </div>
                 </div>
-            
-        </div>
+             </div>
         </div>
       )
     }
