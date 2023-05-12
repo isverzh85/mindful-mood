@@ -293,8 +293,6 @@ return(
                        </div>
                      </div>
                   </div>
-
-
                       <div className={styles.fourthContainer}>
                         <div className={styles.fourth}>4.</div>
                           <div className={styles.body}>Now that you're aware of your upper body, see if you can note points of discomfort. Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to.</div>
