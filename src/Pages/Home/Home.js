@@ -8,7 +8,7 @@ export const HomePage = () => {
     const [name, setName] = useState('');
     const [color, setColor] = useState('');
     const [inputColor, setInputColor] = useState('');
-    const [showPicker, setShowPicker] = useState(true);
+    const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -31,24 +31,13 @@ export const HomePage = () => {
         localStorage.setItem("name", newName);
     }
     
-    const handleColorInputChange = (event) => {
-        const newColor = event.target.value;
-        setColor(newColor);
-        setInputColor(newColor);
-    };
-
     const handleColorChange = (newColor) => {
         setColor(newColor.hex);
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
         localStorage.setItem("color", newColor.hex);
-        setShowPicker(false); 
       };
-    
-    const togglePicker = () => {
-        setShowPicker(!showPicker);
-    };
-     
+   
 return (
   <div className={styles.homePage}>
     <div className={styles.logoContainer}>
@@ -68,34 +57,35 @@ return (
             <div className={styles.colorInputContainer}>
             <div className={styles.colorLabelContainer}>
           <div className={styles.favoriteColor}>What's your favorite <span style={{ color: inputColor }}><span style={{color: color}}>color</span></span>?
-            <div style={{  backgroundColor: color, height: '52px', marginLeft:'100px', marginTop:'30px', width: '52px', borderRadius: '8px' }}>
+             <div className={styles.colorPreviewContainer}>
             <div className={styles.colorContainer}>
-           <input 
+              <input 
                 className={styles.colorText}
                 type="text" 
                 value={color} 
-                onChange={handleColorChange} 
+                onFocus={() => setIsColorPickerVisible(true)}
+                onChange={(event) => setColor(event.target.value)} 
             />
+             <div className={styles.colorPickerContainer}>
+               <div className={styles.colorBox} onClick={() => setIsColorPickerVisible(!isColorPickerVisible)} />
+               {isColorPickerVisible && (
+                   <SketchPicker 
+                     className={styles.sketch}
+                     color={color} 
+                     onChange={handleColorChange} 
+              />
+            )}
+            </div>
             <div className={styles.separateLineTwo}></div> 
             </div>
           </div>
         </div>
       </div>
-          <div className={styles.colorPickerContainer}>
-          <div className={styles.colorBox} style={{ backgroundColor: color }} onClick={togglePicker} />
-          {showPicker && (
-                  <SketchPicker 
-                         className={styles.sketch}
-                         color={color} 
-                         onChange={handleColorChange} 
-                  />
-            )}
-            </div>
             <Link to="/landing-page" className={styles.finish}>Finish</Link>
         </div>
     </div>
-  </div>
+   </div>
  )
-}
+} 
 
 export default HomePage;

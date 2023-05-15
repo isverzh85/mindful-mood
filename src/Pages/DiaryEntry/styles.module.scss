@@ -9,7 +9,10 @@
 }
 
 .radioButtonQuestions{ 
-    margin:65px;
+    display: grid;
+    margin-top: 70px;
+    overflow-y:auto;
+    max-height:900px;
 }
 
 .separateLine{
@@ -19,6 +22,7 @@
 }
 
 .great{
+     width:541px;
      font-family: 'Jost';
      font-style: normal;
      font-weight: 700;
@@ -77,7 +81,21 @@
     color: #383838;
  }
 
-  .contentFeelings{
+ .bigFeelings .big {
+    color: var(--theme-color);
+ }
+
+ .radioButtonsContainer{
+     display:flex;
+ }
+
+ .radioButtonNumber{
+      margin-left: 20px;
+      color: var(--theme-color);
+
+ }
+ 
+.contentFeelings{
     width: 620px;
     margin-top: 40px; 
     font-family: 'Jost';
@@ -88,20 +106,21 @@
     color: #383838;
   }
 
-  .secondContainer{
+.secondContainer{
       display: flex;
   }
 
-  .pain{
-     width: 621px;
-     margin-left: 15px;
+
+.pain{
+    width: 621px;
+    margin-left: 15px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 29px;
     line-height: 42px;
     color: #383838;
-  }
+}
 
 .two{
     display:flex;
@@ -119,7 +138,21 @@
      margin-top:30px;
  }
 
- .row{
+ .checkbox{
+    width: 30px;
+    height:20px;
+    border: 1px solid  var(--underline-color);
+    border-radius: 8px;
+    margin-right:10px;
+ }
+
+.checkboxes .row input[type="checkbox"] + span {
+     display: flex;     
+     padding-left: 40px; 
+     cursor: pointer;
+}
+
+.row{
      display:grid;
      font-family: 'Jost';
      font-style: normal;
@@ -137,10 +170,11 @@
     font-weight: 400;
     font-size: 29px;
     line-height: 42px;
-   color: #383838;
+    color: #383838;
  }
 
  .third{
+    display:flex;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
@@ -150,7 +184,7 @@
  }
 
  .torso{
-    width: 700px;
+    display: contents;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -158,6 +192,8 @@
     line-height: 42px;
     color: #383838;
  }
+
+ 
 
  .thirdContainer{
      display: flex;
@@ -182,4 +218,15 @@
     color: #383838;
  }
 
- 
+ .checkListContainer{
+     display: flex;
+ }
+
+.fifth{
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 49px;
+    color: var(--underline-color);
+}

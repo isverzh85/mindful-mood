@@ -69,7 +69,7 @@ body, html  {
 
 .colorInputContainer {
   display:flex;
-  margin-top:200px;
+  margin-top:190px;
 }
 
 .colorText{
@@ -90,9 +90,8 @@ body, html  {
 }
 
 .finish{
-     width:109px;
-     height:58px;
-     margin-top:300px;
+    margin-top:220px;
+    margin-left:200px;
      font-family: 'Jost';
      font-style: normal;
      font-weight: 700;
@@ -102,8 +101,9 @@ body, html  {
 }
 
 .sketch{
-  top:470px;
-  left:600px;
+  margin-top:20px;
+  width: 300px; 
+  max-width: 100%;
 }
 
 .logo{
@@ -113,10 +113,24 @@ body, html  {
 
 .logoContainer{
   display: flex;
-  margin-top:40px;
-  margin-bottom:70px;
+  margin-top:80px;
+  margin-bottom:30px;
 }
 
-.colorContainr{
+.colorPickerContainer{
   display: flex;
+  flex-direction: column;
+  margin-left: 400px;}
+
+.colorPreviewContainer{
+  margin-left:110px;
+  height: 52px;
+  width: 52px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.colorBox{
+  display: grid;
+  margin-left: 20px;
 }
