@@ -31,7 +31,6 @@
 }
 
 .step{
-    // height: 64px;
     margin-top: 50px;
     margin-left:100px;
     font-weight: 400;
@@ -93,7 +92,7 @@
     align-items: center;
     width: 590px;
     height: 923px;
-    margin-left:285px;
+    margin-left: 85px;
     background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color)  100%);
 }
 
@@ -165,7 +164,7 @@
     font-size: 44px;
     line-height: 64px;
     color: black;
-  }
+}
 
 .lineTwo{
     width: 890px;
@@ -190,7 +189,7 @@
 
 :root {
     --underline-color: #000000; 
-  }
+}
 
   .stepUnderline {
     width: 116px;
@@ -198,18 +197,18 @@
     margin-left:1px;
     border-radius: 100px;
     background-color: var(--underline-color);
-  }
+}
 
   .logo{
     width: 146.95px;
     height: 22.5px;
     margin-top:35px;
-  }
+}
 
   .sunLogo{
     margin-right:10px;
     vertical-align: middle;
-  }
+}
 
   .entries{
     width: 185px;
@@ -222,7 +221,7 @@
     font-size: 22px;
     line-height: 32px;
     color: #000000;
-  }
+}
 
   .timeOff{
     width: 192px;
@@ -234,7 +233,7 @@
     font-size: 22px;
     line-height: 32px;
     color: #000000;
-  }
+}
 
   .checkedIn{
     height: 32px;
@@ -245,7 +244,7 @@
     font-size: 22px;
     line-height: 32px;
     color: #000000;
-  }
+}
 
   .lineStep{
     width: 378px;
@@ -324,4 +323,4 @@
 
 .selectedColor {
     background-color: var(--underline-color);
-  }
+}

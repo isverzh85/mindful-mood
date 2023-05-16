@@ -9,6 +9,8 @@ export const HomePage = () => {
     const [color, setColor] = useState('');
     const [inputColor, setInputColor] = useState('');
     const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
+    const [selectedColor, setSelectedColor] = useState('');
+
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -33,6 +35,8 @@ export const HomePage = () => {
     
     const handleColorChange = (newColor) => {
         setColor(newColor.hex);
+        setSelectedColor(newColor.hex);
+
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
         localStorage.setItem("color", newColor.hex);
@@ -56,7 +60,10 @@ return (
           </div>
             <div className={styles.colorInputContainer}>
             <div className={styles.colorLabelContainer}>
-          <div className={styles.favoriteColor}>What's your favorite <span style={{ color: inputColor }}><span style={{color: color}}>color</span></span>?
+          <div className={styles.favoriteColor}> 
+             <span>What's your favorite</span>
+             <span style={{ color: inputColor }}><span style={{color: color}}>color</span></span>?
+             </div>
              <div className={styles.colorPreviewContainer}>
             <div className={styles.colorContainer}>
               <input 
@@ -68,14 +75,16 @@ return (
             />
              <div className={styles.colorPickerContainer}>
                <div className={styles.colorBox} onClick={() => setIsColorPickerVisible(!isColorPickerVisible)} />
+               <div className={styles.selectedColorBox} style={{ backgroundColor: selectedColor }}>
                {isColorPickerVisible && (
                    <SketchPicker 
                      className={styles.sketch}
                      color={color} 
                      onChange={handleColorChange} 
-              />
+              />        
             )}
             </div>
+
             <div className={styles.separateLineTwo}></div> 
             </div>
           </div>

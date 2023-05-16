@@ -108,8 +108,8 @@
 
 .secondContainer{
       display: flex;
+      margin-bottom:25px;
   }
-
 
 .pain{
     width: 621px;
@@ -184,7 +184,8 @@
  }
 
  .torso{
-    display: contents;
+    width: 621px;
+    margin-left: 15px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -193,13 +194,14 @@
     color: #383838;
  }
 
- 
-
- .thirdContainer{
+.thirdContainer{
      display: flex;
+     margin-bottom:25px;
  }
 
- .fourth{
+.fourth{
+    display:flex;
+    flex-direction:column;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
@@ -208,8 +210,9 @@
     color: var(--underline-color);
  }
 
- .body{
-    width: 700px;
+.body{
+    width: 621px;
+    margin-left: 15px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
@@ -218,15 +221,41 @@
     color: #383838;
  }
 
- .checkListContainer{
-     display: flex;
+ .time{
+    width: 621px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+ }
+
+ .fourthContainer{
+    display: flex;
+    margin-bottom:25px;
  }
 
 .fifth{
+    display:flex;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
     font-size: 34px;
     line-height: 49px;
     color: var(--underline-color);
+}
+
+.moment{
+    width: 621px;
+    margin-left: 15px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 29px;
+    line-height: 42px;
+    color: #383838;
+}
+
+.fifthContainer{
+    display: flex;
 }

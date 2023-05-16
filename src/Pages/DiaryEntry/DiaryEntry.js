@@ -119,7 +119,7 @@ return(
              </div>
           </div>
                    <div className={styles.secondContainer}>
-                   <div className={styles.checklistContainer}>
+                    <div className={styles.checklistContainer}>
                        <div className={styles.two}>2.
                        <div className={styles.pain}>Starting from your head to your shoulders, check all the areas where you feel pain, discomfort, or a general feeling of upset.</div>
                        </div>
@@ -233,8 +233,8 @@ return(
                          <div className={styles.torso}>Next, move down to your torso. Note, which areas are feeling uncomfortable, tight, painful, or even foreign.</div>
                           </div>
                           <div className={styles.checkboxes}>
-                          <div className={styles.row}>
-                          <label>
+                           <div className={styles.row}>
+                            <label>
                                <input type="checkbox" 
                                       name="palms" 
                                       value="palms" 
@@ -322,8 +322,13 @@ return(
                   </div>
                       <div className={styles.fourthContainer}>
                          <div className={styles.checkListContainer}>
-                        <div className={styles.fourth}>4.</div>
-                          <div className={styles.body}>Now that you're aware of your upper body, see if you can note points of discomfort. Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to.</div>
+                        <div className={styles.fourth}>
+                          <div className={styles.stepNumber}>4.</div>
+
+                           
+                          <div className={styles.body}>Now that you're aware of your upper body, see if you can note points of discomfort.</div> 
+                          <div className={styles.time}>Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to. </div>
+                           </div>
                              <div className={styles.checkboxes}>
                              <div className={styles.row}>
                              <label>
@@ -368,7 +373,6 @@ return(
                             </label>
                             </div>
                             <div className={styles.row}>
-
                             <label>
                                <input type="checkbox" 
                                       name="stomach" 
@@ -415,8 +419,9 @@ return(
                      </div>
                         <div className={styles.fifthContainer}>
                            <div className={styles.checkListContainer}>
-                          <div className={styles.fifth}>5.</div>
+                          <div className={styles.fifth}>5.
                              <div className={styles.moment}>Take a moment before moving down to your hips, thighs, legs and feet. Note which areas are feeling uncomfortable, tight, painful or even foreign.</div>
+                              </div>
                                <div className={styles.checkboxes}>
                                <div className={styles.row}>
                                   <label>
@@ -461,7 +466,6 @@ return(
                                   </label>
                                  </div>
                                  <div className={styles.row}>
-
                                   <label>
                                      <input type="checkbox" 
                                             name="buttocks" 
@@ -507,9 +511,9 @@ return(
                             </div>
                         </div>
                       </div>
+                    </div>
                 </div>
-             </div>
-        </div>
+            </div>
       )
     }
 
