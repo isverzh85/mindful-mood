@@ -26,6 +26,7 @@ body, html  {
 }
 
 .nameInputLabel{
+    margin-bottom:20px;
     font-size: 54px;
     line-height: 78px;
     color: #000000;
@@ -50,6 +51,7 @@ body, html  {
 
 .nameInput{
    width: 304px;
+   text-align: center;
    font-family: 'Jost';
    font-weight: 400;
    font-size: 54px;
@@ -68,42 +70,33 @@ body, html  {
 .colorInputContainer {
    display:flex;
    align-items:center;
-   margin-top:90px;
 }
 
 .colorText{
   width:209px;
   height:78px;
-  margin-left:120px;
   font-size:54px;
   line-height:78px;
   border:none;
-  // pointer-events: none;
 }
 
 .separateLineTwo{
    width: 520px;
    height: 0px;
-   transform:translateX(-105px);
+   transform:translateX(-100px);
    margin-top: 30px;
    border: 1px solid #4E4E4E;
 }
 
 .finish{
-    margin-top:400px;
-    margin-left:270px;
+    margin-top:450px;
+    margin-left:320px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
     font-size: 40px;
     line-height: 58px;
     color: #368BE4;
-}
-
-.sketch{
-  margin-top:20px;
-  width: 300px; 
-  max-width: 100%;
 }
 
 .logo{
@@ -118,7 +111,7 @@ body, html  {
 }
 
 .colorPreviewContainer{
-  margin-left:110px;
+  margin-left:210px;
   height: 52px;
   width: 52px;
   border-radius: 8px;
@@ -139,12 +132,14 @@ body, html  {
 .colorPickerContainer{
   display: flex;
   align-items: center;
+  margin-left:-30px;
+  margin-top:-66px;
+
 
 }
 
 .colorBox{
   width: 52px;
   height: 52px;
-  margin-left: 20px; /* Add this line to move the color box closer to the input */
-  margin-top: -20px; 
+  margin-left:-120px;
 }

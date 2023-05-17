@@ -10,8 +10,7 @@ export const HomePage = () => {
     const [inputColor, setInputColor] = useState('');
     const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
     const [selectedColor, setSelectedColor] = useState('');
-
-
+    
     useEffect(() => {
         const savedName = localStorage.getItem("name");
         if (savedName) {
@@ -36,10 +35,10 @@ export const HomePage = () => {
     const handleColorChange = (newColor) => {
         setColor(newColor.hex);
         setSelectedColor(newColor.hex);
-
         document.documentElement.style.setProperty('--text-color', newColor.hex);
         document.documentElement.style.setProperty('--underline-color', newColor.hex);
         localStorage.setItem("color", newColor.hex);
+        setIsColorPickerVisible(false); 
       };
    
 return (
@@ -71,10 +70,10 @@ return (
                 type="text" 
                 value={color} 
                 onFocus={() => setIsColorPickerVisible(true)}
-                onChange={(event) => setColor(event.target.value)} 
+                onChange={(event) => setColor(event.target.value)}
             />
              <div className={styles.colorPickerContainer}>
-               <div className={styles.colorBox} onClick={() => setIsColorPickerVisible(!isColorPickerVisible)} />
+             <div className={styles.colorBox} onClick={() => setIsColorPickerVisible(!isColorPickerVisible)} />
                <div className={styles.selectedColorBox} style={{ backgroundColor: selectedColor }}>
                {isColorPickerVisible && (
                    <SketchPicker 
@@ -84,7 +83,6 @@ return (
               />        
             )}
             </div>
-
             <div className={styles.separateLineTwo}></div> 
             </div>
           </div>
