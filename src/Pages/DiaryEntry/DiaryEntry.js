@@ -9,6 +9,8 @@ export const DiaryEntry = () => {
     const [painAreas, setPainAreas] = useState([]);
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedValue, setSelectedValue] = useState('');
+    const [isWritingFinished, setIsWritingFinished] = useState(false);
+
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -46,10 +48,10 @@ export const DiaryEntry = () => {
         }
       }, [currentStep, bigFeelings]);
 
-    const handleFinishWriting = () => {
-      localStorage.setItem("bigFeelings", selectedValue);
-      setCurrentStep(3);
-    }
+      const handleWritingFinished = () => {
+         setIsWritingFinished(true);
+         localStorage.setItem("currentStep", currentStep.toString());
+        };
 
 return(
       <div className={styles.diaryPage}>

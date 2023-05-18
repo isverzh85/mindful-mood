@@ -14,6 +14,7 @@ export const LandingPage = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [showStepTwo, setShowStepTwo] = useState(false);
     const [isAnxiousChecked, setIsAnxiousChecked] = useState(false);
+    const [isFinishedWriting, setIsFinishedWriting] = useState(false);
     const [isWritingFinished, setIsWritingFinished] = useState(false);
 
     useEffect(() => {
@@ -28,14 +29,6 @@ export const LandingPage = () => {
             console.log(savedColor)
             setColor(savedColor);
         }
-        const savedFeelings = localStorage.getItem("feelings");
-        if (savedFeelings) {
-            setFeelings(savedFeelings);
-        }
-        const savedCurrentStep = localStorage.getItem("currentStep");
-        if (savedCurrentStep) {
-            setCurrentStep(parseInt(savedCurrentStep));
-        }
         const savedIsAnxiousChecked = localStorage.getItem("isAnxiousChecked");
         if (savedIsAnxiousChecked) {
             setIsAnxiousChecked(savedIsAnxiousChecked === "true");
@@ -43,32 +36,63 @@ export const LandingPage = () => {
   }, []);
 
     useEffect(() => {
-      if (isAnxiousChecked || feelings === "checkingIn") {
-          setShowStepTwo(true);
-          setCurrentStep(2);
-      } else {
-          setShowStepTwo(false);
-          setCurrentStep(1);
+        const savedCurrentStep = localStorage.getItem("currentStep");
+        if (savedCurrentStep) {
+            setCurrentStep(parseInt(savedCurrentStep));
+       }
+    }, []);
+
+   useEffect(() => {
+      const savedFeelings = localStorage.getItem("feeling");
+      if (savedFeelings) {
+          setFeelings(savedFeelings);
+      }
+  }, []);
+
+  useEffect(() => {
+     if (isAnxiousChecked || feelings === "checkingIn") {
+         setShowStepTwo(true);
+         setCurrentStep(2);
+     } else {
+         setShowStepTwo(false);
+         setCurrentStep(1);
     }
   }, [isAnxiousChecked, feelings]);
 
-    const handleFeelingChange = (event) => {
-        if (event.target.value === "anxious") {
-          setFeelings("anxious");
-          setIsAnxiousChecked(true);
-          setCurrentStep(2); 
-        } else if (event.target.value === "checkingIn") {
-            setFeelings(event.target.value);
-            setIsAnxiousChecked(false);
-            setCurrentStep(2);
-         }
-        };
+  useEffect(() => {
+    const savedCurrentStep = localStorage.getItem("currentStep");
+    if (savedCurrentStep) {
+      setCurrentStep(parseInt(savedCurrentStep));
+    }
+  
+    if (isFinishedWriting) {
+      setCurrentStep(3);
+    }
+  }, [isFinishedWriting]);
 
-       const handleWritingFinished = () => {
-        setIsWritingFinished(true);
-       };
-        console.log("currentStep", currentStep, color, "color")
-      return (
+   const handleFeelingChange = (event) => {
+    if (event.target.value === "anxious") {
+      setFeelings("anxious");
+      setIsAnxiousChecked(true);
+      setCurrentStep(2);
+    } else if (event.target.value === "checkingIn") {
+      setFeelings(event.target.value);
+      setIsAnxiousChecked(false);
+      setCurrentStep(2);
+    }
+    localStorage.setItem("feeling", event.target.value);
+  };
+
+    const handleWritingFinished = () => {
+       setIsWritingFinished(true);
+       setIsFinishedWriting(true);
+       localStorage.setItem("currentStep", currentStep.toString());
+       if (currentStep === 1) {
+          localStorage.setItem("feeling", feelings);
+      }
+    };
+
+  return (
         <div className={styles.landingPage}>
           <div className={styles.contentContainer}>
             <div className={styles.greetingAndStepsContainer}>
@@ -93,7 +117,6 @@ export const LandingPage = () => {
                                              name="feeling" 
                                              value="anxious" 
                                              className={styles.anxiousButton}
-                                             checked={feelings === "anxious"} 
                                              onChange={handleFeelingChange} 
                                              onClick={() => setCurrentStep(2)}
                                        />
@@ -104,7 +127,6 @@ export const LandingPage = () => {
                                                name="feeling" 
                                                className={styles.checkingButton}
                                                value="checkingIn" 
-                                               checked={feelings === "checkingIn"} 
                                                onChange={handleFeelingChange}
                                                onClick={() => setCurrentStep(2)}
                                         />
@@ -125,8 +147,10 @@ export const LandingPage = () => {
                                         }
                                     </div>
                                       <div className={styles.lineTwo}></div>
-                                        <div className={styles.stepThree}>Step 3</div>  
-                                           <div className={styles.stepThreeUnderline}></div>
+                                      <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}> 
+                                         Step 3
+                                        </div>
+                                      <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
                                </div>
                                    <div className={styles.notesContainer}>
                                      <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
@@ -142,7 +166,7 @@ export const LandingPage = () => {
                                          </div>
                                      </div>
                                   </div>
-                    );
-          }
+                               );
+                            }
 
 export default LandingPage
