@@ -18,7 +18,7 @@ const CheckingIn= ({ currentStep, feelings }) => {
         </div>
         {currentStep === 3 && (
                 <div className={styles.thirdStepContainer}>
-                    <div className={styles.thirdStep}>Step 3</div>
+                    {/* <div className={styles.thirdStep}>Step 3</div> */}
                     <div className={styles.todayGoals}>
                           Let's see if there was anything about today that made it extra special, or anything you can do now!
                         <button className={styles.continuedDiary}>Continue diary entry</button>

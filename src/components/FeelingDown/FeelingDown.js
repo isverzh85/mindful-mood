@@ -27,17 +27,19 @@ export const FeelingDown= ({ currentStep, feelings }) => {
                  </div>
                     <div className={styles.diaryEntryContainer}>
                      </div> 
-                 </div>
-                 <div className={`${styles.thirdStepContainer} ${currentStep === 3 && feelings === "anxious" ? styles.active : ''}`}>
-                      <div className={styles.feelBetterContainer}>
-                        <div className={styles.feelBetter}>
-                         Let's see if we can do things to make you feel better.
+                 </div>              
+                    <div className={styles.feelBetterContainer}>
+                       <div className={`${styles.thirdStepContainer} ${currentStep === 3 && feelings === "anxious" ? styles.active : ''}`}>
+                          <div className={styles.feelBetter}>
+                             <div className={styles.feelBetterText}>
+                                Let's see if we can do things to make you feel better.
+                            </div>
+                              <Link to="/diary" className={styles.diaryButton}>Continue diary entry</Link>
                          </div>
-                         <Link to="/diary" className={styles.diaryButton}>Continue diary entry</Link>
-                    </div>
-                </div>
-             </div>
-    );
-};
+                      </div>
+                   </div>
+                 </div>
+            );
+       };
 
 export default FeelingDown;

@@ -147,7 +147,8 @@ export const LandingPage = () => {
                                            </>
                                        )}     
                                     </div>
-                                        <div className={styles.lineTwo}></div>
+                                        <div className={styles.lineTwo}>
+                                      </div>
                                           <div className={styles.stepThreeContainer}>
                                              {(currentStep >= 3 || showStepTwo) && !isRadioSelected && (
                                             <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
