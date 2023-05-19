@@ -8,16 +8,14 @@ body, html  {
     flex-direction:column;
     justify-content:flex-start;
     align-items:center;
-    height: 1024px;
-    left: 0px;
-    top: 0px;
+    height: 100vh;
     background: linear-gradient(116.82deg, rgba(233, 101, 255, 0.5) 0%, rgba(96, 206, 206, 0.5) 100%);
-  }
+}
 
 .container {
-    display:flex;
-    align-items: baseline;
-    flex-direction:column;
+    display:block;
+    // align-items: baseline;
+    // flex-direction:column;
     width: 807px;
     height: 693px;
     background: #FFFFFF;
@@ -33,14 +31,15 @@ body, html  {
 }
 
 .nameInputContainer{
-    margin-top:100px;
-    margin-left:100px;  
-    width: 589px;
-    height: 78px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  margin-top: 115px;
+  margin-left: 100px;
+  width: 589px;
+  height: 78px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:130px;
 }
 
 .favoriteColor{
@@ -50,14 +49,17 @@ body, html  {
 }
 
 .nameInput{
-   width: 304px;
-   text-align: center;
-   font-family: 'Jost';
-   font-weight: 400;
-   font-size: 54px;
-   line-height: 78px;
-   color: #000000;
-   border: none;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-family: 'Jost';
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 78px;
+  color: #000000;
+  border: none;
+  background-color: transparent;
 }
 
 .separateLine{
@@ -70,6 +72,7 @@ body, html  {
 .colorInputContainer {
    display:flex;
    align-items:center;
+   margin-left:90px;
 }
 
 .colorText{
@@ -77,14 +80,16 @@ body, html  {
   height:78px;
   font-size:54px;
   line-height:78px;
+  margin-left: 75px;
   border:none;
+  color:var(--underline-color);
 }
 
 .separateLineTwo{
    width: 520px;
    height: 0px;
-   transform:translateX(-100px);
-   margin-top: 30px;
+  //  transform:translateX(-100px);
+   margin-top: auto;
    border: 1px solid #4E4E4E;
 }
 
@@ -115,9 +120,9 @@ body, html  {
   height: 52px;
   width: 52px;
   border-radius: 8px;
+  justify-content:center;
   display: flex;
 }
-
 
 .selectedColorBox {
     width: 52px;
@@ -129,17 +134,35 @@ body, html  {
   margin-right: 15px;
 }
 
-.colorPickerContainer{
+.colorPickerContainer {
   display: flex;
   align-items: center;
-  margin-left:-30px;
-  margin-top:-66px;
-
-
+  transform: translateY(0%);
+  margin-left: 30px;
+   border-bottom: 1px solid black; 
 }
 
 .colorBox{
   width: 52px;
   height: 52px;
-  margin-left:-120px;
+  margin-right:5px;
+
+  // margin-left:-120px;
+}
+
+.sketch{
+  margin-top:90px;
+}
+
+.nameInputWrapper{
+display: flex;
+  align-items: center;
+  width: 304px;
+  height: 78px;
+  margin-top: 10px;
+}
+
+.finishLine{
+  display:flex;
+  margin-left:400px;
 }

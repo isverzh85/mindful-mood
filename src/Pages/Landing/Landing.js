@@ -16,6 +16,7 @@ export const LandingPage = () => {
     const [isAnxiousChecked, setIsAnxiousChecked] = useState(false);
     const [isFinishedWriting, setIsFinishedWriting] = useState(false);
     const [isWritingFinished, setIsWritingFinished] = useState(false);
+    const [isRadioSelected, setIsRadioSelected] = useState(false);
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
@@ -25,8 +26,10 @@ export const LandingPage = () => {
         const currentDate = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
         setDate(currentDate);
         const savedColor = localStorage.getItem("color");
+        console.log(savedColor)
         if (savedColor) {
-            console.log(savedColor)
+          document.documentElement.style.setProperty('--underline-color', savedColor);
+
             setColor(savedColor);
         }
         const savedIsAnxiousChecked = localStorage.getItem("isAnxiousChecked");
@@ -64,23 +67,19 @@ export const LandingPage = () => {
     if (savedCurrentStep) {
       setCurrentStep(parseInt(savedCurrentStep));
     }
-  
     if (isFinishedWriting) {
       setCurrentStep(3);
     }
   }, [isFinishedWriting]);
 
-   const handleFeelingChange = (event) => {
-    if (event.target.value === "anxious") {
-      setFeelings("anxious");
-      setIsAnxiousChecked(true);
-      setCurrentStep(2);
-    } else if (event.target.value === "checkingIn") {
-      setFeelings(event.target.value);
-      setIsAnxiousChecked(false);
-      setCurrentStep(2);
-    }
-    localStorage.setItem("feeling", event.target.value);
+  const handleFeelingChange = (event) => {
+    const selectedFeeling = event.target.value;
+    setFeelings(selectedFeeling);
+    setIsAnxiousChecked(selectedFeeling === "anxious");
+    setCurrentStep(2);
+    localStorage.setItem("feeling", selectedFeeling);
+    localStorage.setItem("isAnxiousChecked", selectedFeeling === "anxious");
+    localStorage.setItem("currentStep", "2");
   };
 
     const handleWritingFinished = () => {
@@ -118,7 +117,6 @@ export const LandingPage = () => {
                                              value="anxious" 
                                              className={styles.anxiousButton}
                                              onChange={handleFeelingChange} 
-                                             onClick={() => setCurrentStep(2)}
                                        />
                                     </label>
                                     <span className={styles.anxious}>I'm feeling anxious/depressed or otherwise off.</span>
@@ -128,7 +126,6 @@ export const LandingPage = () => {
                                                className={styles.checkingButton}
                                                value="checkingIn" 
                                                onChange={handleFeelingChange}
-                                               onClick={() => setCurrentStep(2)}
                                         />
                                     </label>
                                       <span className={styles.checkingIn}>I'm just checking in with my body.</span>
@@ -136,21 +133,29 @@ export const LandingPage = () => {
                               </div>
                                 <div className={styles.lineOne}></div>
                                   <div className={styles.stepTwoContainer}>
+                                  {!isRadioSelected && (
                                     <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
-                                            Step 2
-                                            <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""}`} style={{background: currentStep>=2 ? color:""} }>
-                                            </div>
-                                            </div>
-                                        {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} /> 
-                                        } 
-                                        {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings}  />
-                                        }
+                                    Step 2
+                                    <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""}`} style={{ background: currentStep >= 2 ? color : "" }}></div>
+                                  </div>
+                                )}
+                               )
+                                   {currentStep >= 2 && (
+                                          <>
+                                            {feelings === 'anxious' && <FeelingDown currentStep={currentStep} feelings={feelings} />}
+                                            {feelings === 'checkingIn' && <CheckingIn currentStep={currentStep} feelings={feelings} />}
+                                           </>
+                                       )}     
                                     </div>
-                                      <div className={styles.lineTwo}></div>
-                                      <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}> 
-                                         Step 3
+                                        <div className={styles.lineTwo}></div>
+                                          <div className={styles.stepThreeContainer}>
+                                             {(currentStep >= 3 || showStepTwo) && !isRadioSelected && (
+                                            <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
+                                                 Step 3
+                                         <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
                                         </div>
-                                      <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
+                                    )}
+                               </div>
                                </div>
                                    <div className={styles.notesContainer}>
                                      <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
