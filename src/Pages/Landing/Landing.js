@@ -38,15 +38,11 @@ export const LandingPage = () => {
         }
   }, []);
 
-    useEffect(() => {
-        const savedCurrentStep = localStorage.getItem("currentStep");
-        if (savedCurrentStep) {
-            setCurrentStep(parseInt(savedCurrentStep));
-       }
-    }, []);
+   
 
    useEffect(() => {
       const savedFeelings = localStorage.getItem("feeling");
+      console.log(savedFeelings)
       if (savedFeelings) {
           setFeelings(savedFeelings);
       }
@@ -92,6 +88,7 @@ export const LandingPage = () => {
     };
 
   return (
+       <div className={styles.mainContainer}>
         <div className={styles.landingPage}>
           <div className={styles.contentContainer}>
             <div className={styles.greetingAndStepsContainer}>
@@ -171,6 +168,7 @@ export const LandingPage = () => {
                                                 <img src={logo} alt="logo" className={styles.logo} />
                                          </div>
                                      </div>
+                                  </div>
                                   </div>
                                );
                             }

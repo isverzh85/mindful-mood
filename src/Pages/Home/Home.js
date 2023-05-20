@@ -65,20 +65,25 @@ return (
     <div className={styles.logoContainer}>
       <img src={logo} alt="logo" className={styles.logo} />
     </div>
+    <div className={styles.nameAndColorContainer}>
+
       <div className={styles.container}>
+        <div className={styles.helloContainer}>
         <div className={styles.nameInputContainer}>
-        <label className={styles.nameInputLabel}>Hello. What's your name?</label>
-        <div className={styles.nameInputWrapper}>
-         <input
-              id="nameInput"
-              type="text"
-              className={styles.nameInput}
-              onChange={handleNameChange}
-              placeholder="my name is..."
-          />  
-        </div>
-            <div className={styles.separateLine}></div> 
+          <label className={styles.nameInputLabel}>Hello. What's your name?</label>
+            <div className={styles.nameInputWrapper}>
+                <input
+                    id="nameInput"
+                    type="text"
+                    className={styles.nameInput}
+                    onChange={handleNameChange}
+                    placeholder="my name is..."
+                 />
+             </div>
+            <div className={styles.separateLine}></div>
+            </div>
           </div>
+          <div className={styles.favoriteColorContainer}>
             <div className={styles.colorInputContainer}>
             <div className={styles.colorLabelContainer}>
           <div className={styles.favoriteColor}> 
@@ -108,14 +113,17 @@ return (
                 }}
             />
             </div>
-          </div>
+            </div>
         </div>
       </div>
+    </div>
+    </div>
+    </div>
     </div>
         <div className={styles.finishLine}>
         <Link to="/landing-page" className={styles.finish}>Finish</Link>
        </div>
-    </div>
+    {/* </div> */}
    </div>
  )
 } 
