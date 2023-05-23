@@ -88,10 +88,9 @@ export const LandingPage = () => {
     };
 
   return (
-       <div className={styles.mainContainer}>
         <div className={styles.landingPage}>
-          <div className={styles.contentContainer}>
             <div className={styles.greetingAndStepsContainer}>
+              <div className={styles.content}>
               <div className={styles.greetingContainer}>
                 <div className={styles.greeting}>Hello, {name}.
                   <span className={styles.greetingTwo}>How are you feeling?</span>
@@ -100,12 +99,10 @@ export const LandingPage = () => {
                     <img src={sunLogo} alt="sunLogo" className={styles.sunLogo} /> 
                       <span className={styles.date}>Today is {date}.</span> 
                     </div>
-                   </div>
-                      <div className={styles.stepOneContainer}>
-                        <div className={styles.step}>Step 1
-                           <div className={styles.stepUnderline}></div>
-                             <div className={styles.tracking}>What are you tracking?</div>
-                           </div>
+                          <div className={styles.stepOneContainer}>
+                             <div className={styles.step}>Step 1
+                                 <div className={styles.stepUnderline}></div>
+                                     <div className={styles.tracking}>What are you tracking?</div> 
                               <div className={styles.stepOneWrapper}></div>
                                 <div className={styles.anxietyContainer}>
                                    <label>
@@ -127,8 +124,9 @@ export const LandingPage = () => {
                                     </label>
                                       <span className={styles.checkingIn}>I'm just checking in with my body.</span>
                                   </div>
-                              </div>
                                 <div className={styles.lineOne}></div>
+                                </div>
+                            </div>
                                   <div className={styles.stepTwoContainer}>
                                   {!isRadioSelected && (
                                     <div className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${isWritingFinished ? styles.completedStep : ""}`}>
@@ -155,6 +153,8 @@ export const LandingPage = () => {
                                     )}
                                </div>
                                </div>
+                               </div>
+                               </div>
                                    <div className={styles.notesContainer}>
                                      <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>
                                         <img src={csv} alt="csvLogo" className={styles.csv} /> 
@@ -167,8 +167,6 @@ export const LandingPage = () => {
                                                 </div>
                                                 <img src={logo} alt="logo" className={styles.logo} />
                                          </div>
-                                     </div>
-                                  </div>
                                   </div>
                                );
                             }

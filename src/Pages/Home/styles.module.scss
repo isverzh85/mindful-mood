@@ -13,8 +13,8 @@ body, html  {
 }
     
 .container {
-  width: 807px;
-  height: 70vh;
+  width: 100vh;
+  height: 75vh;
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -35,8 +35,8 @@ body, html  {
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
-  font-size: 54px;
-  line-height: 78px;
+  font-size: 3rem;
+  line-height: 1.3;
   color: #000000;
   align-self: flex-start;
   margin-top: 0;
@@ -45,14 +45,14 @@ body, html  {
 .nameInputContainer{
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
 }
 
 .favoriteColor{
-    width: 670px;
-    font-size: 54px;
-    line-height: 78px;
+  width: 190%;
+  font-size: 3rem;
+  line-height: 1.3;
 }
 
 .nameInput{
@@ -62,13 +62,12 @@ body, html  {
   text-align: center;
   font-family: 'Jost';
   font-weight: 400;
-  font-size: 54px;
-  line-height: 78px;
+  font-size: 3rem;
+  line-height: 1.3;
   color: #000000;
   border: none;
   background-color: transparent;
   margin-bottom: 0;
-  margin-left:40px
 }
 
 .separateLine{
@@ -79,60 +78,62 @@ body, html  {
 }
 
 .colorInputContainer {
-   display:flex;
-   align-items:center;
-   margin-left:90px;
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  width: 80%;
 }
 
 .colorText{
-  width:209px;
-  height:78px;
-  font-size:54px;
-  line-height:78px;
-  margin-left: 75px;
-  border:none;
-  color:var(--underline-color);
+  flex: 1;
+  height: 3rem;
+  font-size: 3rem;
+  line-height: 1.3;
+  border: none;
+  color: var(--underline-color);
+  display: flex;
+  align-items: center;
 }
 
 .separateLineTwo{
-   width: 520px;
-   height: 0px;
-   margin-top: auto;
-   border: 1px solid #4E4E4E;
+  width: 520px;
+  height: 0px;
+  margin-top: auto;
+  border: 1px solid #4E4E4E;
 }
 
 .finish{
   font-family: 'Jost';
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 58px;
+  font-size: 2.5rem;
+  line-height: 1.3;
   color: #368BE4;
+  margin-left: 0;
 }
 
 .logo{
-    width: 200.3px;
-    height: 28.8px;
+  width: 200.3px;
+  height: 28.8px;
 }
 
 .logoContainer{
-  margin-top:60px;
   margin-bottom:30px;
 }
 
 .colorPreviewContainer{
-  margin-left:210px;
   height: 52px;
   width: 52px;
   border-radius: 8px;
-  justify-content:center;
+  justify-content: center;
   display: flex;
+  align-items: center;
 }
 
 .selectedColorBox {
-    width: 52px;
-    height: 52px;
-    border-radius: 8px;
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
 }
 
 .favoriteColor span:not(:last-child) {
@@ -144,20 +145,31 @@ body, html  {
   align-items: center;
   transform: translateY(0%);
   margin-left: 30px;
-   border-bottom: 1px solid black; 
+  border-bottom: 1px solid black;
 }
 
 .colorBox{
   width: 52px;
   height: 52px;
-  margin-right:5px;
+  margin-right: 75px;
+  background-color: var(--underline-color);
+  margin-top:10px;
 }
 
-.sketch{
-  margin-top:90px;
+.sketchContainer{
+  margin-top: 90px;
+  margin-left: 200px;
 }
 
 .finishLine{
   display: flex;
-  margin-left: 1500px;
+  margin-left: 1100px;
+}
+
+.colorContainer{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-left: 690px;
+  border-bottom:1px solid black;
 }
