@@ -80,22 +80,22 @@ return (
       </div>
       <div className={styles.nameAndColorContainer}>
         <div className={styles.container}>
-          <div className={styles.helloContainer}>
-            <div className={styles.nameInputContainer}>
-              <label className={styles.nameInputLabel}>Hello. What's your name?</label>
-              <div className={styles.nameInputWrapper}>
-                <input
-                  id="nameInput"
-                  type="text"
-                  className={styles.nameInput}
-                  value={name}
-                  onChange={handleNameChange}
-                  placeholder="my name is..."
-                />
-              </div>
-              <div className={styles.separateLine}></div>
-              </div>
+        <div className={styles.nameAndColorWrapper}>
+          <div className={styles.nameContainer}>
+            <label className={styles.nameInputLabel}>Hello. What's your name?</label>
           </div>
+            <div className={styles.nameInputWrapper}>
+              <input
+                id="nameInput"
+                type="text"
+                className={styles.nameInput}
+                value={name}
+                onChange={handleNameChange}
+                placeholder="my name is..."
+              />
+            </div>
+            <div className={styles.nameUnderline}></div> 
+        </div>
           <div className={styles.favoriteColorContainer}>
             <div className={styles.colorInputContainer}>
               <div className={styles.colorLabelContainer}>

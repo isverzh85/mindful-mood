@@ -16,30 +16,33 @@ export const FeelingDown= ({ currentStep, feelings }) => {
     };
     
     return(
-        <div className={styles.feelingDownContainer}>
-          <div className={`${styles.secondStepContainer} ${currentStep === 2 && feelings === "anxious" ? styles.active : ''}`}>
-            <div className={styles.anxiousContainer}>
-              <div className={styles.anxious}>I'm sorry to hear that. Let's take note of those feelings.
-                </div>
-                   <div className={styles.diaryButtonContainer}>
-                     <Link to="/diary" className={styles.diaryButton}>Write diary entry</Link>
-                   </div>
-                 </div>
-                    <div className={styles.diaryEntryContainer}>
-                     </div> 
-                 </div>              
-                    <div className={styles.feelBetterContainer}>
-                       <div className={`${styles.thirdStepContainer} ${currentStep === 3 && feelings === "anxious" ? styles.active : ''}`}>
-                          <div className={styles.feelBetter}>
-                             <div className={styles.feelBetterText}>
-                                Let's see if we can do things to make you feel better.
-                            </div>
-                              <Link to="/diary" className={styles.diaryButton}>Continue diary entry</Link>
-                         </div>
-                      </div>
-                   </div>
-                 </div>
-            );
-       };
+           <div className={styles.feelingDownContainer}>
+               <div className={`${styles.secondStepContainer} ${currentStep === 2 && feelings === "anxious" ? styles.active : ""}`}>
+                     <div className={styles.anxiousContainer}>
+                     <div className={styles.anxious}>I'm sorry to hear that. Let's take note of those feelings.</div>
+      <div className={styles.diaryButtonContainer}>
+        <Link to="/diary" className={styles.diaryButton}>
+          Write diary entry
+        </Link>
+      </div>
+    </div>
+    <div className={styles.diaryEntryContainer}></div>
+  </div>
+  <div className={styles.feelBetterContainer}>
+    <div className={`${styles.thirdStepContainer} ${currentStep === 3 && feelings === "anxious" ? styles.active : ""}`}>
+      <div className={styles.feelBetter}>
+        <div className={styles.feelBetterText}>
+          Let's see if we can do things to make you feel better.
+        </div>
+        <Link to="/diary" className={styles.diaryButton}>
+          Continue diary entry
+        </Link>
+        </div>
+    </div>
+    </div>
+    </div>
+    )}
+
+  
 
 export default FeelingDown;

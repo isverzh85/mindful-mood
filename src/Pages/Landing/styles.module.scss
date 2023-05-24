@@ -3,6 +3,46 @@
   width: 100%;
 }
 
+.step {
+  display: flex; 
+  align-items: center; 
+  margin-top: 50px;
+  margin-left: 5%;
+  font-weight: 400;
+  font-size: 4.4vh;
+  line-height: 6.4vh;
+}
+
+.greeting{
+   font-family: 'Jost';
+   font-style: normal;
+   font-weight: 700;
+   font-size: 1.78vw;
+   line-height: 5.47vh;
+   color: #383838;
+}
+
+.greetingTwo {
+  font-family: 'Jost';
+   font-style: normal;
+  margin-left: 30px;
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 49px;
+  color: #383838;
+}
+
+.stepHeader{
+  display:grid;
+  margin-top: 60px;
+}
+
+
+
+.stepsContainer {
+  flex: 1;
+}
+
 .greetingContainer {
   height: 2.4vh;
   margin-left: 5%;
@@ -12,12 +52,9 @@
   line-height: 6.4vh;
 }
 
-.greetingTwo {
-  margin-left: 30px;
-  font-weight: 400;
-  font-size: 34px;
-  line-height: 49px;
-  color: #383838;
+
+.radioContainer{
+  display:grid;
 }
 
 .date{
@@ -38,14 +75,6 @@
   font-size: 34px;
   line-height: 49px;
   color: #383838;
-}
-
-.step {
-  margin-top: 50px;
-  margin-left: 5%;
-  font-weight: 400;
-  font-size: 4.4vh;
-  line-height: 6.4vh;
 }
 
 .tracking {
@@ -97,13 +126,14 @@
 
 .notesContainer {
   display: flex;
+  flex: 1;
+  margin-left: 20px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 350px;
   height: 740px;
-  margin-left:285px;
   background: linear-gradient(180deg, var(--underline-color) 0%, var(--underline-color) 100%);
 }
 
