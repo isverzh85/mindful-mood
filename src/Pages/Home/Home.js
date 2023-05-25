@@ -6,10 +6,10 @@ import { Link } from 'react-router-dom';
 
 export const HomePage = () => {
   const [name, setName] = useState('');
-  const [color, setColor] = useState('');
-  const [inputColor, setInputColor] = useState('');
+  const [color, setColor] = useState(null);
+  const [inputColor, setInputColor] = useState(null);
   const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
-  const [selectedColor, setSelectedColor] = useState('');
+  const [selectedColor, setSelectedColor] = useState(null);
   const [isMounted, setIsMounted] = useState(false);
   const colorInputRef = useRef(null);
 
@@ -53,9 +53,11 @@ export const HomePage = () => {
         setIsColorPickerVisible(false);
       }
     };
-    window.addEventListener('click', handleOutsideClick);
+
+    document.body.addEventListener('click', handleOutsideClick);
+
     return () => {
-      window.removeEventListener('click', handleOutsideClick);
+      document.body.removeEventListener('click', handleOutsideClick);
     };
   }, [isColorPickerVisible]);
 
@@ -75,6 +77,19 @@ export const HomePage = () => {
     localStorage.setItem("color", newColorValue);
     setIsColorPickerVisible(false);
   };
+
+  const handleColorBoxClick = () => {
+    setIsColorPickerVisible((prevState) => !prevState);
+    const sketchContainer = document.querySelector(".sketchContainer");
+    if (sketchContainer) {
+      sketchContainer.classList.toggle("visible");
+    }
+  };
+
+  const handleColorTextFocus = () => {
+    setIsColorPickerVisible(true);
+  };
+
   
 return (
    <div className={styles.homePage}>
@@ -100,68 +115,63 @@ return (
             <div className={styles.nameUnderline}></div>
           </div>
           <div className={styles.colorInputContainer}>
-            <div className={styles.colorLabelContainer}>
-              <div className={styles.colorSection}>
-                <div className={styles.favoriteColor}>
-                  <span>What's your favorite</span>
-                  <span style={{ color: inputColor }}>
-                    <span style={{ color: selectedColor }}>color</span>
-                  </span>
-                  <span>?</span>
-                </div>
-
-
-
-                
-                <div className={styles.colorPreviewContainer}>
-                  <div className={styles.colorContainer}>
-                  <div className={styles.colorBoxWrapper}>
-                      {inputColor && (
+              <div className={styles.colorLabelContainer}>
+                <div className={styles.colorSection}>
+                  <div className={styles.favoriteColor}>
+                    <span>What's your favorite</span>
+                    <span style={{ color: inputColor }}>
+                      <span style={{ color: selectedColor }}>color</span>
+                    </span>
+                    <span>?</span>
+                  </div>
+                  <div className={styles.colorPreviewContainer}>
+                    <div className={styles.colorContainer}>
+                      <div className={styles.colorBoxWrapper}>
                         <div
                           className={styles.colorBox}
                           style={{ backgroundColor: inputColor }}
-                          ref={colorInputRef}
-                          onClick={() => setIsColorPickerVisible(true)}
-                        />
-                      )}
-                      {isColorPickerVisible && (
-                        <div className={styles.sketchContainer}>
-                          <SketchPicker color={color} onChange={handleColorChange} />
-                        </div>
-                      )}
-                    </div>
-                    <div className={styles.colorTextWrapper}>
-                      <div className={styles.colorText}>
-                        <input
-                          id="colorInput"
-                          className={`${styles.colorText} ${
-                            inputColor ? '' : styles.emptyLine
-                          }`}
-                          type="text"
-                          value={inputColor}
-                          onFocus={() => setIsColorPickerVisible(true)}
-                          onChange={(event) => {
-                            setInputColor(event.target.value);
-                            setColor(event.target.value);
-                          }}
+                          onClick={handleColorBoxClick}
                         />
                       </div>
+                      <div className={styles.colorTextWrapper}>
+                        <div className={styles.colorText}>
+                          <input
+                            id="colorInput"
+                            className={`${styles.colorText} ${inputColor ? '' : styles.emptyLine}`}
+                            type="text"
+                            value={inputColor}
+                            onFocus={handleColorTextFocus}
+                            onChange={(event) => {
+                              setInputColor(event.target.value);
+                              setColor(event.target.value);
+                            }}
+                          />
+                        </div>
+                      </div>
                     </div>
+                    {isColorPickerVisible && (
+                      <div className={styles.sketchContainer}>
+                        <SketchPicker color={color} onChange={handleColorChange} />
+                      </div>
+                    )}
                   </div>
+                  <div className={styles.colorUnderline}></div>
                 </div>
-                <div className={styles.colorUnderline}></div>
               </div>
             </div>
           </div>
-        </div>
-        <div className={styles.finishLine}>
-          <Link to="/landing-page" className={styles.finish}>
-            Finish
-          </Link>
+          <div className={styles.finishLine}>
+            <Link to="/landing-page" className={styles.finish}>
+              Finish
+            </Link>
+          </div>
         </div>
       </div>
-    </div>
   );
 };
+
+
+
+         
 
 export default HomePage;
