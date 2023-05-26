@@ -19,14 +19,11 @@ export const LandingPage = () => {
     const [isRadioSelected, setIsRadioSelected] = useState(false);
     const [selectedFeeling, setSelectedFeeling] = useState('');
 
-
     useEffect(() => {
       const savedName = localStorage.getItem("name");
       if (savedName) {
         setName(savedName);
       }
-      const currentDate = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
-      setDate(currentDate);
       const savedColor = localStorage.getItem("color");
       console.log(savedColor)
       if (savedColor) {
@@ -37,6 +34,15 @@ export const LandingPage = () => {
       if (savedIsAnxiousChecked) {
         setIsAnxiousChecked(savedIsAnxiousChecked === "true");
       }
+    }, []);
+
+    useEffect(() => {
+      const currentDate = new Date();
+      const month = currentDate.toLocaleString('en-US', { month: 'long' });
+      const day = currentDate.toLocaleString('en-US', { day: 'numeric' });
+      const year = currentDate.toLocaleString('en-US', { year: 'numeric' });
+      const formattedDate = `${month} ${day}, ${year}`;
+      setDate(formattedDate);
     }, []);
 
     useEffect(() => {
@@ -108,7 +114,6 @@ export const LandingPage = () => {
     }
   }, [isFinishedWriting]);
 
-
   useEffect(() => {
     const savedWritingFinished = localStorage.getItem("isWritingFinished");
     if (savedWritingFinished) {
@@ -164,22 +169,19 @@ export const LandingPage = () => {
     }
   }, [isAnxiousChecked, feelings]);
 
-  
-
-
   return (
-     <div className={styles.landingPage}>
-       <div className={styles.stepsContainer}>
-         <div className={styles.greetingContainer}>
-           <div className={styles.greeting}>
-              Hello, {name}.
-            <span className={styles.greetingTwo}>How are you feeling?</span>
-          </div>
-          <div className={styles.dateContainer}>
-            <img src={sunLogo} alt="sunLogo" className={styles.sunLogo} />
-            <span className={styles.date}>Today is {date}.</span>
-          </div>
-        </div>
+<div className={styles.landingPage}>
+  <div className={styles.stepsContainer}>
+    <div className={styles.greetingContainer}>
+      <div className={styles.greeting}>
+        Hello, {name}.
+        <span className={styles.greetingTwo}>How are you feeling?</span>
+      </div>
+      <div className={styles.dateContainer}>
+        <img src={sunLogo} alt="sunLogo" className={styles.sunLogo} />
+        <span className={styles.date}>Today is {date}.</span>
+      </div>
+    </div>
         <div className={styles.stepOneContainer}>
             <div className={styles.step}>
                 <div className={styles.stepHeader}>
@@ -208,11 +210,12 @@ export const LandingPage = () => {
                       />
                     <span className={styles.checkingIn}>I'm just checking in with my body.</span>
                  </label>
-               </div>
-                    <div className={styles.lineOne}></div>
-              </div>
-           </div>    
 
+               </div>
+              </div>
+              <div className={styles.lineOne}></div>
+
+           </div>    
         <div className={styles.stepTwoContainer}>
           {!isRadioSelected && (
             <div
@@ -221,14 +224,13 @@ export const LandingPage = () => {
             }`}
           >
            Step 2
-  <div
-    className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
-      isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""
-    }`}
-    style={{ background: currentStep >= 2 ? color : "" }}
-  ></div>
-</div>
-          )}
+          <div className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
+                  isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""
+           }`}
+                  style={{ background: currentStep >= 2 ? color : "" }}
+            ></div>
+          </div>
+              )}
           {currentStep >= 2 && (
             <>
               {feelings === "anxious" && <FeelingDown currentStep={currentStep} feelings={feelings} />}
@@ -237,14 +239,13 @@ export const LandingPage = () => {
           )}
         </div>
         <div className={styles.lineTwo}></div>
-        <div className={styles.stepThreeContainer}>
-          {(currentStep >= 3 || showStepTwo) && !isRadioSelected && (
-           <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
-           Step 3
+             <div className={styles.stepThreeContainer}>
+                  {(currentStep >= 3 || showStepTwo) && !isRadioSelected && (
+                  <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
+                     Step 3
            <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
          </div>
-         
-          )}
+      )}
         </div>
       </div>
       <div className={styles.notesContainer}>

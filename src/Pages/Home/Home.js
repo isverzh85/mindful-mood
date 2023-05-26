@@ -53,9 +53,7 @@ export const HomePage = () => {
         setIsColorPickerVisible(false);
       }
     };
-
     document.body.addEventListener('click', handleOutsideClick);
-
     return () => {
       document.body.removeEventListener('click', handleOutsideClick);
     };
@@ -90,7 +88,6 @@ export const HomePage = () => {
     setIsColorPickerVisible(true);
   };
 
-  
 return (
    <div className={styles.homePage}>
       <div className={styles.logoContainer}>
@@ -169,9 +166,5 @@ return (
       </div>
   );
 };
-
-
-
-         
 
 export default HomePage;
