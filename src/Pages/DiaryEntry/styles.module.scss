@@ -1,47 +1,61 @@
-.diaryContainer{
-    display: flex;;
-}
-
-.headingContainer{
+.diaryContainer {
+    display: flex;
+  }
+  
+.headingContainer {
     margin-left: 80px;
     margin-top: 60px;
-    margin-right:150px;
-}
-
-.radioButtonQuestions{ 
+    margin-right: 150px;
+  }
+  
+.radioButtonQuestions {
     display: grid;
     margin-top: 70px;
-    overflow-y:auto;
-    max-height:1000px;
-}
+    overflow-y: auto;
+    max-height: 1000px;
+  }
 
-.separateLine{
-    width: 1300px;
+  .separateLine {
+    width: 100%;
+    max-width: 1300px; 
     border: 1px solid #E3E3E3;
     transform: rotate(90deg);
-}
+  }
+  
+  .great {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 44px;
+    line-height: 64px;
+    color: #383838;
+  }
 
-.great{
-     width:541px;
-     font-family: 'Jost';
-     font-style: normal;
-     font-weight: 700;
-     font-size: 44px;
-     line-height: 64px;
-     color: #383838;
-}
+  .hardFeeling {
+    margin-top: 60px;
+    margin-left: 30px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 49px;
+    color: #383838;
+  }
+  
+  .finishWriting {
+    display: flex;
+    margin-top: 250px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 49px;
+    color: var(--underline-color);
+  }
+  
 
-.hardFeeling{
-     width: 500px;
-     margin-top: 60px;
-     margin-left: 30px;
-     font-family: 'Jost';
-     font-style: normal;
-     font-weight: 400;
-     font-size: 34px;
-     line-height: 49px;
-     color: #383838;
-}
+
+
 
 .finishWriting{
       display:flex;

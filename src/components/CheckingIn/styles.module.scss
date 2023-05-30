@@ -1,50 +1,5 @@
-.secondStep{
+.secondStep {
     width: 121px;
-    height: 64px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 44px;
-    line-height: 64px;  
-    color: #383838;  
-}
-
-.wonderful{
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 35px;
-    color: #383838;
-    margin-left:180px;
-    margin-top: 90px;
-    margin-bottom:30px;
-}
-
-.buttonDiaryEntry{
-    margin-left:40px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 35px;
-    color: var(--underline-color);
-}
-
-.buttonDiaryEntryContainer{
-    display:flex;
-    align-items:center;
-    box-sizing: border-box;
-    border: 5px solid var(--underline-color);
-    border-radius: 100px;
-    width: 280px;
-    height: 61px;
-    margin-left: 180px;
-    margin-top: 40px;
-}
-
-.thirdStep{
-    width: 120px;
     height: 64px;
     font-family: 'Jost';
     font-style: normal;
@@ -52,18 +7,63 @@
     font-size: 44px;
     line-height: 64px;
     color: #383838;
-}
-
-.todayGoals{
+  }
+  
+.wonderful {
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #383838;
+    margin-left: 180px;
+    margin-top: 90px;
+    margin-bottom: 30px;
+}
+  
+.buttonDiaryEntry {
+    margin-left: 40px;
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 35px;
+    color: var(--underline-color);
 }
 
-.continuedDiary{
+.buttonDiaryEntryContainer {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    border: 5px solid var(--underline-color);
+    border-radius: 100px;
+    width: fit-content; 
+    height: 61px;
+    margin-left: 180px;
+    margin-top: 40px;
+}
+
+.thirdStep {
+  width: 120px;
+  height: 64px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 44px;
+  line-height: 64px;
+  color: #383838;
+}
+
+.todayGoals {
+    font-family: 'Jost';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 35px;
+    color: #383838;
+  }
+
+  .continuedDiary {
     font-family: 'Jost';
     font-style: normal;
     font-weight: 700;
@@ -73,8 +73,8 @@
     box-sizing: border-box;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
-}
-
-.messageContainer{
-    margin-bottom:40px;
+  }
+  
+.messageContainer {
+    margin-bottom: 40px;
 }

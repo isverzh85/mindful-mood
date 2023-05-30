@@ -46,18 +46,17 @@ export const HomePage = () => {
     const handleOutsideClick = (event) => {
       if (
         isColorPickerVisible &&
-        !event.target.classList.contains(styles.colorText) &&
         colorInputRef.current &&
         !colorInputRef.current.contains(event.target)
       ) {
         setIsColorPickerVisible(false);
       }
     };
-    document.body.addEventListener('click', handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
     return () => {
-      document.body.removeEventListener('click', handleOutsideClick);
-    };
-  }, [isColorPickerVisible]);
+    document.removeEventListener('click', handleOutsideClick);
+  };
+}, [isColorPickerVisible]);
 
   const handleNameChange = (event) => {
     const newName = event.target.value;
@@ -78,10 +77,6 @@ export const HomePage = () => {
 
   const handleColorBoxClick = () => {
     setIsColorPickerVisible((prevState) => !prevState);
-    const sketchContainer = document.querySelector(".sketchContainer");
-    if (sketchContainer) {
-      sketchContainer.classList.toggle("visible");
-    }
   };
 
   const handleColorTextFocus = () => {
@@ -89,21 +84,21 @@ export const HomePage = () => {
   };
 
 return (
-   <div className={styles.homePage}>
+<div className={styles.homePage}>
       <div className={styles.logoContainer}>
         <img src={logo} alt="logo" className={styles.logo} />
       </div>
-      <div className={styles.nameAndColorContainer}>
-        <div className={styles.container}>
+      <div className={styles.container}>
+        <div className={styles.nameContainer}>
           <div className={styles.nameAndColorWrapper}>
-            <div className={styles.nameContainer}>
+            <div className={styles.nameQuestionContainer}>
               <div className={styles.nameInputLabel}>Hello. What's your name?</div>
             </div>
             <div className={styles.nameInputWrapper}>
               <input
                 id="nameInput"
                 type="text"
-                className={styles.nameInput}
+                className={`${styles.nameInput} ${styles.nameInputColor}`}
                 value={name}
                 onChange={handleNameChange}
                 placeholder="my name is..."
@@ -111,60 +106,56 @@ return (
             </div>
             <div className={styles.nameUnderline}></div>
           </div>
-          <div className={styles.colorInputContainer}>
-              <div className={styles.colorLabelContainer}>
-                <div className={styles.colorSection}>
-                  <div className={styles.favoriteColor}>
-                    <span>What's your favorite</span>
-                    <span style={{ color: inputColor }}>
-                      <span style={{ color: selectedColor }}>color</span>
-                    </span>
-                    <span>?</span>
-                  </div>
-                  <div className={styles.colorPreviewContainer}>
-                    <div className={styles.colorContainer}>
-                      <div className={styles.colorBoxWrapper}>
-                        <div
-                          className={styles.colorBox}
-                          style={{ backgroundColor: inputColor }}
-                          onClick={handleColorBoxClick}
-                        />
-                      </div>
-                      <div className={styles.colorTextWrapper}>
-                        <div className={styles.colorText}>
-                          <input
-                            id="colorInput"
-                            className={`${styles.colorText} ${inputColor ? '' : styles.emptyLine}`}
-                            type="text"
-                            value={inputColor}
-                            onFocus={handleColorTextFocus}
-                            onChange={(event) => {
-                              setInputColor(event.target.value);
-                              setColor(event.target.value);
-                            }}
-                          />
-                        </div>
-                      </div>
-                    </div>
-                    {isColorPickerVisible && (
-                      <div className={styles.sketchContainer}>
-                        <SketchPicker color={color} onChange={handleColorChange} />
-                      </div>
-                    )}
-                  </div>
-                  <div className={styles.colorUnderline}></div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className={styles.finishLine}>
-            <Link to="/landing-page" className={styles.finish}>
-              Finish
-            </Link>
-          </div>
         </div>
-      </div>
-  );
-};
+        <div className={styles.colorContainer}>
+            <div className={styles.favoriteColorContainer}>
+                <div className={styles.favoriteColor}>
+                    <div className={styles.favorite}>
+                       <span>What's your favorite</span>
+                        <span style={{ color: inputColor }}>
+                         <span style={{ color: selectedColor }}>color</span>
+                         </span>
+                        <span>?</span>
+                    </div>
+                 <div className={styles.colorBoxContainer}>
+                      <div className={styles.colorBoxWrapper}>
+                           <div className={styles.colorBox}
+                                style={{ backgroundColor: inputColor }}
+                                onClick={handleColorBoxClick}
+                            />
+                      </div>
+                   <div className={styles.colorTextWrapper}>
+                       <div className={styles.colorText}>
+                          <input id="colorInput"
+                                 className={`${styles.colorInput} ${inputColor ? '' : styles.emptyLine}`}
+                                 type="text"
+                                 value={inputColor}
+                                  onFocus={handleColorTextFocus}
+                                 onChange={(event) => {setInputColor(event.target.value);
+                                                        setColor(event.target.value);
+                                     }}
+                                  ref={colorInputRef}
+                                />
+                           </div>
+                       </div>
+                    </div>
+                            {isColorPickerVisible && (
+                                <div className={styles.sketchContainer}>
+                                <SketchPicker color={color} onChange={handleColorChange} />
+                                 </div>
+                                )}
+                         </div>
+                       <div className={styles.colorUnderline}></div>
+                     </div>   
+                   </div>
+               </div>
+                      <div className={styles.finishLineContainer}>
+                          <Link to="/landing-page" className={styles.finish}>
+                                Finish
+                           </Link>
+                      </div>
+                    </div>  
+                );
+            };
 
 export default HomePage;

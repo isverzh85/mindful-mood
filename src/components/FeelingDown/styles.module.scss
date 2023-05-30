@@ -1,4 +1,4 @@
-.diaryButton{
+.diaryButton {
     margin-left: 30px;
     font-family: 'Jost';
     font-style: normal;
@@ -7,20 +7,20 @@
     line-height: 35px;
     color: var(--underline-color);
 }
-
-.diaryButtonContainer{
-    display:flex;
-    align-items:center;
+  
+.diaryButtonContainer {
+    display: flex;
+    align-items: center;
     box-sizing: border-box;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
-    width: 280px;
+    width: fit-content; 
     height: 61px;
     margin-left: 74px;
     margin-top: 40px;
 }
 
-.thirdStep{
+.thirdStep {
     width: 120px;
     height: 64px;
     margin-top: 36px;
@@ -31,9 +31,9 @@
     font-size: 44px;
     line-height: 64px;
     color: #383838;
-}
-
-.feelBetter{
+  }
+  
+.feelBetter {
     width: 558px;
     height: 35px;
     margin-left: 30px;
@@ -44,17 +44,17 @@
     font-size: 24px;
     line-height: 35px;
     color: #383838;
-}
-
-.feelBetterText{
-    margin-left:40px;
-    margin-bottom:40px;
-}
-
-.diaryEntry{
+  }
+  
+.feelBetterText {
+    margin-left: 40px;
+    margin-bottom: 40px;
+  }
+  
+.diaryEntry {
     width: 231px;
     height: 35px;
-    margin-left:50px;
+    margin-left: 50px;
     margin-top: 20px;
     font-family: 'Jost';
     font-style: normal;
@@ -63,42 +63,43 @@
     line-height: 35px;
     color: var(--underline-color);
     box-sizing: border-box;
-    // position: absolute;
+    /* position: absolute; */
     width: 291px;
     height: 61px;
     border: 5px solid var(--underline-color);
     border-radius: 100px;
-}
-
-.anxious{
+  }
+  
+.anxious {
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #383838;
-    margin-left:80px;
-    margin-bottom:40px;
-}
-
-.anxiousContainer{
-    margin-bottom:40px
-}
-
-.secondStepContainer{
+    margin-left: 80px;
+    margin-bottom: 40px;
+  }
+  
+.anxiousContainer {
+    margin-bottom: 40px;
+  }
+  
+.secondStepContainer {
     display: flex;
     align-items: center;
     margin-top: 75px;
     margin-left: 100px;
     opacity: 0.5;
-}
-
-.secondStepContainer.active{
+  }
+  
+.secondStepContainer.active {
     opacity: 1;
-}
-
+  }
+  
 .diaryEntryContainer {
     display: flex;
     justify-content: center;
     margin-top: 30px;
   }
+  
