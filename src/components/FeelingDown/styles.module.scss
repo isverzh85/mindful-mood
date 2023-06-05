@@ -1,29 +1,29 @@
 .diaryButton {
-    margin-left: 30px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 35px;
-    color: var(--underline-color);
+  margin-left: 30px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  color: var(--underline-color);
 }
   
 .diaryButtonContainer {
-    display: flex;
-    align-items: center;
-    box-sizing: border-box;
-    border: 5px solid var(--underline-color);
-    border-radius: 100px;
-    width: fit-content; 
-    height: 61px;
-    margin-left: 74px;
-    margin-top: 40px;
+  box-sizing: border-box;
+  border: 5px solid var(--underline-color);
+  border-radius: 100px;
+  width:252px;
+  height: 61px;
+}
+
+.diaryButtonWrapper{
+  display:flex;
 }
 
 .thirdStep {
     width: 120px;
     height: 64px;
-    margin-top: 36px;
+    margin-top: 30px;
     margin-bottom: 20px;
     font-family: 'Jost';
     font-style: normal;
@@ -31,44 +31,41 @@
     font-size: 44px;
     line-height: 64px;
     color: #383838;
-  }
+}
   
 .feelBetter {
     width: 558px;
     height: 35px;
     margin-left: 30px;
-    margin-top: 35px;
+    margin-top: 30px;
     font-family: 'Jost';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 35px;
     color: #383838;
-  }
+}
   
 .feelBetterText {
-    margin-left: 40px;
-    margin-bottom: 40px;
-  }
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
   
 .diaryEntry {
-    width: 231px;
-    height: 35px;
-    margin-left: 50px;
-    margin-top: 20px;
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 35px;
-    color: var(--underline-color);
-    box-sizing: border-box;
-    /* position: absolute; */
-    width: 291px;
-    height: 61px;
-    border: 5px solid var(--underline-color);
-    border-radius: 100px;
-  }
+  width: 291px;
+  height: 61px;
+  margin-left: 30px;
+  margin-top: 20px;
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 35px;
+  color: var(--underline-color);
+  box-sizing: border-box;
+  border: 5px solid var(--underline-color);
+  border-radius: 100px;
+}
   
 .anxious {
     font-family: 'Jost';
@@ -77,29 +74,26 @@
     font-size: 24px;
     line-height: 35px;
     color: #383838;
-    margin-left: 80px;
-    margin-bottom: 40px;
-  }
+    margin-left: 30px;
+    margin-bottom: 30px;
+}
   
 .anxiousContainer {
-    margin-bottom: 40px;
-  }
+    margin-bottom: 30px;
+}
   
 .secondStepContainer {
-    display: flex;
-    align-items: center;
-    margin-top: 75px;
-    margin-left: 100px;
-    opacity: 0.5;
-  }
+    margin-top: 30px;
+    margin-left: 10px;
+}
   
 .secondStepContainer.active {
     opacity: 1;
-  }
+}
   
 .diaryEntryContainer {
     display: flex;
     justify-content: center;
     margin-top: 30px;
-  }
+}
   

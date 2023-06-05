@@ -22,10 +22,13 @@ return(
                  <div className={styles.anxious}>
                       I'm sorry to hear that. Let's take note of those feelings.
                  </div>
+                 <div className={styles.diaryButtonWrapper}>
             <div className={styles.diaryButtonContainer}>
+
               <Link to="/diary" className={styles.diaryButton}>
                 Write diary entry
               </Link>
+            </div>
             </div>
           </div>
         </div>

@@ -23,22 +23,29 @@ export const LandingPage = () => {
     if (savedName) {
       setName(savedName);
     }
+
     const savedColor = localStorage.getItem("color");
     if (savedColor) {
       document.documentElement.style.setProperty('--underline-color', savedColor);
       setColor(savedColor);
     }
+
     const savedIsAnxiousChecked = localStorage.getItem("isAnxiousChecked");
     if (savedIsAnxiousChecked) {
       setIsAnxiousChecked(savedIsAnxiousChecked === "true");
     }
+
     const savedFeelings = localStorage.getItem("feeling");
     if (savedFeelings) {
       setSelectedFeeling(savedFeelings); 
       setFeelings(savedFeelings);
     }
+    const savedCurrentStep = localStorage.getItem("currentStep");
+    if (savedCurrentStep) {
+      setCurrentStep(parseInt(savedCurrentStep, 10));
+    }
   }, []);
-
+  
   useEffect(() => {
     const currentDate = new Date();
     const formattedDate = currentDate.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
@@ -59,17 +66,11 @@ export const LandingPage = () => {
     setSelectedFeeling(selectedFeeling);
     setFeelings(selectedFeeling);
     setIsAnxiousChecked(selectedFeeling === "anxious");
-    if (selectedFeeling === "anxious" || selectedFeeling === "checkingIn") {
-      setCurrentStep(2);
-    } else {
-      setCurrentStep(1);
-    }
+    setCurrentStep(selectedFeeling === "anxious" || selectedFeeling === "checkingIn" ? 2 : 1);
+  
     localStorage.setItem("feeling", selectedFeeling);
     localStorage.setItem("isAnxiousChecked", selectedFeeling === "anxious");
-    localStorage.setItem(
-      "currentStep",
-      selectedFeeling === "anxious" || selectedFeeling === "checkingIn" ? "2" : "1"
-    );
+    localStorage.setItem("currentStep", selectedFeeling === "anxious" || selectedFeeling === "checkingIn" ? "2" : "1");
   };
 
   const handleFinishedWriting = () => {
@@ -82,16 +83,9 @@ export const LandingPage = () => {
 
   useEffect(() => {
     setIsRadioSelected(currentStep === 1);
-  }, [currentStep]);
-  
-  useEffect(() => {
     localStorage.setItem("currentStep", currentStep.toString());
   }, [currentStep]);
-  
-  useEffect(() => {
-    setIsRadioSelected(currentStep === 1);
-  }, [currentStep]);
-  
+
 return (
     <div className={styles.landingPage}>
       <div className={styles.stepsContainer}>
@@ -135,8 +129,10 @@ return (
               </label>
             </div>
           </div>
-          <div className={styles.lineOne}></div>
+          {/* <div className={styles.lineOne}></div> */}
         </div>
+        <div className={styles.lineOne}></div>
+
         <div className={styles.stepTwoContainer}>
           {!isRadioSelected && (
             <div
