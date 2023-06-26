@@ -361,5 +361,67 @@
               }
             ]
           }
+        },
+        {
+            "enjoyment":{
+                "title": "If it’s day time, stand outside in the sun and listen. If it’s night time, play some music.",
+                "enjoymentRoutine": {
+                    "enjoy": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
+                    "enjoymentQuestion": "How much did that help you?"
+                }, 
+                "radioButtons": [
+                  {
+                    "value": "1",
+                    "label": "1"
+                  },
+                  {
+                    "value": "2",
+                    "label": "2"
+                  },
+                  {
+                    "value": "3",
+                    "label": "3"
+                },
+                {
+                    "value": "4",
+                    "label": "4"
+                },
+                {
+                    "value": "5",
+                    "label": "5"
+                }
+              ]
+            }
+           },
+            {
+              "reachingOut":{
+                    "title": "Send a loved one, friend, or family, a small message.",
+                    "reachingOutRoutine": {
+                        "reach": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
+                        "enjoymentQuestion": "How much did that help you?"
+                    }, 
+                    "radioButtons": [
+                      {
+                        "value": "1",
+                        "label": "1"
+                      },
+                      {
+                        "value": "2",
+                        "label": "2"
+                      },
+                      {
+                        "value": "3",
+                        "label": "3"
+                    },
+                    {
+                        "value": "4",
+                        "label": "4"
+                    },
+                    {
+                        "value": "5",
+                        "label": "5"
+                    }
+                  ]
+            }
         }
     ]
