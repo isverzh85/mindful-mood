@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from '../DiaryEntry/styles.module.scss';
 import { Link } from 'react-router-dom';
+import data from '../../data.json';
 
 
 export const DiaryEntry = () => {
@@ -76,8 +77,10 @@ return(
                             <div className={styles.content}>
                             <div className={styles.contentFeelings}>
                             <p className={styles.smallFeelings}>
+                              {data.bigFeelings.contentFeelings.smallFeelings}
                             </p>  
                             <p className={styles.bigFeelingsParagraph}> 
+                            
                             </p>
                             <div className={styles.radioButtonsContainer}>
                       <label>

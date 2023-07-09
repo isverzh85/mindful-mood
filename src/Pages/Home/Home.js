@@ -54,9 +54,9 @@ export const HomePage = () => {
     };
     document.addEventListener('click', handleOutsideClick);
     return () => {
-    document.removeEventListener('click', handleOutsideClick);
-  };
-}, [isColorPickerVisible]);
+      document.removeEventListener('click', handleOutsideClick);
+    };
+  }, [isColorPickerVisible]);
 
   const handleNameChange = (event) => {
     const newName = event.target.value;
@@ -84,11 +84,14 @@ export const HomePage = () => {
   };
 
 return (
-<div className={styles.homePage}>
+  <div className={styles.homePage}>
+          {/* <div className={styles.container}> */}
+
       <div className={styles.logoContainer}>
         <img src={logo} alt="logo" className={styles.logo} />
       </div>
       <div className={styles.container}>
+      
         <div className={styles.nameContainer}>
           <div className={styles.nameAndColorWrapper}>
             <div className={styles.nameQuestionContainer}>
@@ -155,6 +158,7 @@ return (
                            </Link>
                       </div>
                     </div>  
+                    // </div>
                 );
             };
 

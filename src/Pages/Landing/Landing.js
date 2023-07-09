@@ -19,6 +19,7 @@ export const LandingPage = () => {
   const [selectedFeeling, setSelectedFeeling] = useState('');
 
   useEffect(() => {
+
     const savedName = localStorage.getItem("name");
     if (savedName) {
       setName(savedName);
@@ -40,6 +41,7 @@ export const LandingPage = () => {
       setSelectedFeeling(savedFeelings); 
       setFeelings(savedFeelings);
     }
+
     const savedCurrentStep = localStorage.getItem("currentStep");
     if (savedCurrentStep) {
       setCurrentStep(parseInt(savedCurrentStep, 10));
@@ -56,7 +58,6 @@ export const LandingPage = () => {
     if (isAnxiousChecked || feelings === "checkingIn") {
       setShowStepTwo(true);
     } else {
-      setShowStepTwo(false);
       setCurrentStep(1);
     }
   }, [isAnxiousChecked, feelings]);
@@ -66,7 +67,12 @@ export const LandingPage = () => {
     setSelectedFeeling(selectedFeeling);
     setFeelings(selectedFeeling);
     setIsAnxiousChecked(selectedFeeling === "anxious");
-    setCurrentStep(selectedFeeling === "anxious" || selectedFeeling === "checkingIn" ? 2 : 1);
+  
+    if (selectedFeeling === "anxious" || selectedFeeling === "checkingIn") {
+      setCurrentStep(2);
+    } else {
+      setCurrentStep(1);
+    }
   
     localStorage.setItem("feeling", selectedFeeling);
     localStorage.setItem("isAnxiousChecked", selectedFeeling === "anxious");
@@ -129,10 +135,8 @@ return (
               </label>
             </div>
           </div>
-          {/* <div className={styles.lineOne}></div> */}
         </div>
         <div className={styles.lineOne}></div>
-
         <div className={styles.stepTwoContainer}>
           {!isRadioSelected && (
             <div
@@ -158,13 +162,13 @@ return (
       </div>
       <div className={styles.lineTwo}></div>
       <div className={styles.stepThreeContainer}>
-        {(currentStep >= 3 || showStepTwo) && !isRadioSelected && (
-          <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
-            Step 3
-            <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
-          </div>
-        )}
-      </div>
+         {currentStep >= 3 && !isRadioSelected && (
+         <div className={`${styles.stepThree} ${currentStep >= 3 ? styles.selectedColor : ""}`}>
+             Step 3
+         <div className={`${styles.stepThreeUnderline} ${currentStep >= 3 ? styles.selectedColor : ""}`}></div>
+       </div>
+      )}
+     </div>
       </div>
       <div className={styles.notesContainer}>
         <div className={styles.notes}>Let's take a look at how you've been doing recently:</div>

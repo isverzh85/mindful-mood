@@ -1,5 +1,4 @@
 body, html {
-  height: 100%;
   overflow: hidden;
 }
 
@@ -8,7 +7,7 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  height:800px;
   background: linear-gradient(116.82deg, rgba(233, 101, 255, 0.5) 0%, rgba(96, 206, 206, 0.5) 100%);
 }
 
@@ -17,8 +16,8 @@ body, html {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  width: 100vh;
-  height: 73vh;
+  width: 780px;
+  height: 550px;
   margin: auto;
   background: #FFFFFF;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -49,13 +48,10 @@ body, html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
 }
 
 .nameInput {
   flex: 1;
-  width: 100%;
-  height: 100%;
   text-align: center;
   font-family: 'Jost';
   font-style: italic;
@@ -65,21 +61,18 @@ body, html {
   border: none;
   background-color: transparent;
   margin-bottom: 0;
-  margin-left: 20px;
+  padding-left: 20px;
 }
 
 .nameUnderline {
-  width: 90%;
   height: 1px;
   background-color: #4E4E4E;
-  margin-left: 30px;
 }
 
 .colorContainer {
   display: flex;
   align-items: flex-start;
-    justify-content: center; 
-  margin-top: 30px;
+  justify-content: center; 
 }
 
 .colorSection{
@@ -87,9 +80,7 @@ body, html {
 }
 
 .colorUnderline {
-  width: 500px;
   height: 0px;
-  margin-left: 20px;
   border: 1px solid #4E4E4E;
   transform: rotate(180deg);
 }
@@ -105,7 +96,6 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 109px;
   height: 58px;
   font-family: 'Jost';
   font-style: normal;
@@ -113,13 +103,12 @@ body, html {
   font-size: 40px;
   line-height: 58px;
   color: #368BE4;
-  padding-right:70px;
 }
 
 .favoriteColor {
   font-size: 3rem;
   line-height: 1.3;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .nameInputColor {
@@ -127,26 +116,26 @@ body, html {
 }
 
 .separateLine{
-  width: 589px;
   height: 0px;
   border: 1px solid #4E4E4E;
   transform: rotate(180deg);
 }
 
 .colorInput {
-    font-family: 'Jost';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 54px;
-    line-height: 78px;
-    width: 220px;
-    height: 3rem;
-    border:none;
-    color: var(--underline-color);
+  font-family: 'Jost';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 54px;
+  line-height: 78px;
+  width: 220px;
+  height: 3rem;
+  border:none;
+  color: var(--underline-color);
+  margin-top: 10px;
+  padding: 0;
 }
 
 .separateLineTwo{
-  width: 520px;
   height: 0px;
   margin-top: auto;
   border: 1px solid #4E4E4E;
@@ -157,7 +146,6 @@ body, html {
 }
 
 .logo{
-  width: 200.3px;
   height: 28.8px;
 }
 
@@ -165,11 +153,12 @@ body, html {
   display: flex;
   justify-content: center;
   margin-bottom:30px;
+  margin-top:30px;
+  background-color: transparent; 
 }
 
 .colorPreviewContainer{
   height: 52px;
-  width: 52px;
   border-radius: 8px;
   justify-content: center;
   display: flex;
@@ -177,7 +166,6 @@ body, html {
 }
 
 .selectedColorBox {
-  width: 52px;
   height: 52px;
   border-radius: 8px;
 }
@@ -201,30 +189,28 @@ body, html {
 }
 
 .colorBox {
-    width: 50px;
-    height: 50px;
-    border-radius: 8px;
-    background-color: var(--underline-color);
-    cursor: pointer;
+  height: 50px;
+  border-radius: 8px;
+  background-color: var(--underline-color);
+  cursor: pointer;
 }
   
 .sketchContainer {
-    opacity: 1;
-    position: absolute;
-    top: 390px;
-    left: 200px;
-    transition: opacity 0.2s ease-in-out;
-    z-index: 2;
+  opacity: 1;
+  position: absolute;
+  top: 390px;
+  left: 200px;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 2;
 }
 
 .sketchContainer.visible {
-    opacity: 1;
+  opacity: 1;
 }
 
 .finishLineContainer {
   display: flex;
-  justify-content: flex-end;
-  width: 100%;
+  justify-content: flex-end; 
 }
 
 .colorContainer{
@@ -234,14 +220,11 @@ body, html {
 }
 
 .nameUnderline {
-  width: 90%;
   height: 1px;
   background-color: #4E4E4E;
-  margin-left: 30px;
 }
 
 .secondLine{
-  width: 289px;
   border: 1px solid #4E4E4E;
   transform: rotate(180deg);
   display: flex;
@@ -252,7 +235,6 @@ body, html {
 }
 
 .colorUnderline{
-  width: 500px;
   height: 0px;
   margin-left:20px;
   border: 1px solid #4E4E4E;
@@ -268,7 +250,6 @@ body, html {
 .colorBoxWrapper{
   display: inline-block;
   vertical-align: top;
-  width: 52px;
   height: 52px;
 }
 

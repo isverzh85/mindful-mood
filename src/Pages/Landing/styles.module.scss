@@ -1,6 +1,5 @@
 .landingPage {
   display: flex;
-  width: 100%;
 }
 
 .stepsContainer {
@@ -8,9 +7,9 @@
 }
 
 .greetingContainer {
-  height: 2.4vh;
-  margin-left: 5%;
-  margin-top: 4vh;
+  height: 20px;
+  margin-left: 30px;
+  margin-top: 30px;
   margin-bottom:30px;
 }
 
@@ -18,18 +17,16 @@
   display: flex; 
   align-items: center; 
   margin-top: 30px;
-  margin-left: 2%;
+  margin-left: 10px;
   font-weight: 400;
-  font-size: 4.4vh;
-  line-height: 6.4vh;
 }
 
 .greeting{
    font-family: 'Jost';
    font-style: normal;
    font-weight: 700;
-   font-size: 2.78vw;
-   line-height: 5.47vh;
+   font-size: 27px;
+   line-height: 5px;
    color: #383838;
 }
 
@@ -41,7 +38,6 @@
   line-height: 49px;
   color: #383838;
   display: inline-block;
-  width: 310px;
   height: 49px;
   margin-left: 20px;
 }
@@ -123,7 +119,6 @@
 
 .anxiousButton {
   box-sizing: border-box;
-  width: 41px;
   height: 41px;
   margin-left: 7px;
   background-color: var(--underline-color);
@@ -140,8 +135,7 @@
 }
 
 .notesContainer {
-  max-width: 100%;
-  width: 35%;
+  width: 550px;
   height: 740px;
   margin: 0;
   padding: 0;
@@ -160,7 +154,6 @@
 
 .notes {
   width: 351px;
-  height: 70px;
   margin-left: auto;
   margin-right: auto;
   font-family: 'Jost';
@@ -176,24 +169,21 @@
   background: #FFFFFF;
   border-radius: 8px;
   margin: 30px auto;
-  width: 100%;
-  max-width: 434px;
-  height: 100vh;
+  width: 500px;
+  height: 500px;
 }
 
 .lineOne {
-  width: 55vw;
-  height: 0px;
+  width: 810px;
   border: 1px solid #E3E3E3;
-  transform: rotate(180deg);
-  margin-left: 45px;
+  margin-left: 30px;
   margin-top: 30px;
 }
 
 .stepTwo.grayedOutStep {
   width: 121px;
   height: 64px;
-  margin-left: 10%;
+  margin-left: 10px;
   margin-top: 30px;
   margin-bottom: 30px;
   font-family: 'Jost';
@@ -209,8 +199,8 @@
 }
 
 .stepTwo {
-  margin-left: 5%;
-  margin-top: 20px;
+  margin-left: 30px;
+  margin-top: 10px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 400;
@@ -220,10 +210,10 @@
 }
 
 .lineTwo {
-  width: 77%;
+  width: 770px;
   max-width: 890px;
   height: 0px;
-  margin-left: 5%;
+  margin-left: 25px;
   border: 1px solid #e3e3e3;
   transform: rotate(180deg);
 }
@@ -323,19 +313,19 @@
 }
 
 input[type="radio"] {
-       appearance: none;
-       width: 41px;
-       height: 41px;
-       border-radius: 50%;
-       border:  1px solid #E3E3E3;
-       background-color:  #FFFFFF;;
+    appearance: none;
+    width: 41px;
+    height: 41px;
+    border-radius: 50%;
+    border:  1px solid #E3E3E3;
+    background-color:  #FFFFFF;;
 }
 
 input[type="radio"]:checked {
-  background-color: var(--underline-color);
+    background-color: var(--underline-color);
 }
 .contentContainer{
-      width:806px;
+    width:806px;
 }
 
 .stepOneContainer{
@@ -370,11 +360,11 @@ input[type="radio"]:checked {
 }
 
 .underlineSelected {
-       color: var(--underline-color);
+   color: var(--underline-color);
 }
 
 .selectedColor {
-    background-color: var(--underline-color);
+   background-color: var(--underline-color);
 }
 
 .stepThreeContainer{
