@@ -11,6 +11,11 @@ export const DiaryEntry = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedValue, setSelectedValue] = useState('');
     const [isWritingFinished, setIsWritingFinished] = useState(false);
+    // const data = require('../../data.json');
+    
+    const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
+
+
 
 
     useEffect(() => {
@@ -27,6 +32,16 @@ export const DiaryEntry = () => {
             setPainAreas(JSON.parse(savedPainAreas));
         }
     }, []);
+    const handleCheckboxChange = (event) => {
+      const { value, checked } = event.target;
+      if (checked) {
+        setCheckedCheckboxes((prevCheckboxes) => [...prevCheckboxes, value]);
+      } else {
+        setCheckedCheckboxes((prevCheckboxes) =>
+          prevCheckboxes.filter((checkbox) => checkbox !== value)
+        );
+      }
+    };
 
     useEffect(() => {
         if (currentStep === 3) {
@@ -54,6 +69,10 @@ export const DiaryEntry = () => {
          localStorage.setItem("currentStep", currentStep.toString());
         };
 
+console.log(data.bigFeelings);
+console.log(styles)
+console.log(data)
+
 return(
       <div className={styles.diaryPage}>
         <div className={styles.contentContainer}>
@@ -70,6 +89,7 @@ return(
                   </div>
                 </div>
             </div>
+
           <div className={styles.radioButtonQuestions}>
               <div className={styles.questionsContainer}>
                  <div className={styles.oneContainer}>
@@ -77,7 +97,11 @@ return(
                             <div className={styles.content}>
                             <div className={styles.contentFeelings}>
                             <p className={styles.smallFeelings}>
-                              {data.bigFeelings.contentFeelings.smallFeelings}
+
+                              {data[0].bigFeelings.title}
+                              {data[0].bigFeelings.contentFeelings}
+                              
+
                             </p>  
                             <p className={styles.bigFeelingsParagraph}> 
                             

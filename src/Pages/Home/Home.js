@@ -7,9 +7,9 @@ import { Link } from 'react-router-dom';
 export const HomePage = () => {
   const [name, setName] = useState('');
   const [color, setColor] = useState(null);
-  const [inputColor, setInputColor] = useState(null);
+  const [inputColor, setInputColor] = useState('');
   const [isColorPickerVisible, setIsColorPickerVisible] = useState(false);
-  const [selectedColor, setSelectedColor] = useState(null);
+  const [selectedColor, setSelectedColor] = useState('');
   const [isMounted, setIsMounted] = useState(false);
   const colorInputRef = useRef(null);
 
@@ -25,22 +25,14 @@ export const HomePage = () => {
 
   useEffect(() => {
     const savedColor = localStorage.getItem("color");
-    if (savedColor) {
-      setColor(savedColor);
-      setInputColor(savedColor);
-      setSelectedColor(savedColor);
-      document.documentElement.style.setProperty('--text-color', savedColor);
-      document.documentElement.style.setProperty('--underline-color', savedColor);
-    } else {
-      const initialColor = '';
-      setColor(initialColor);
-      setInputColor(initialColor);
-      setSelectedColor(initialColor);
-      document.documentElement.style.setProperty('--text-color', initialColor);
-      document.documentElement.style.setProperty('--underline-color', initialColor);
-    }
+    const initialColor = '';
+    setColor(savedColor || initialColor);
+    setInputColor(savedColor || initialColor);
+    setSelectedColor(savedColor || initialColor);
+    document.documentElement.style.setProperty('--text-color', savedColor || initialColor);
+    document.documentElement.style.setProperty('--underline-color', savedColor || initialColor);
     localStorage.removeItem("color");
-  }, []);
+}, []);
 
   useEffect(() => {
     const handleOutsideClick = (event) => {
@@ -84,18 +76,15 @@ export const HomePage = () => {
   };
 
 return (
-  <div className={styles.homePage}>
-          {/* <div className={styles.container}> */}
-
-      <div className={styles.logoContainer}>
-        <img src={logo} alt="logo" className={styles.logo} />
-      </div>
-      <div className={styles.container}>
-      
-        <div className={styles.nameContainer}>
-          <div className={styles.nameAndColorWrapper}>
-            <div className={styles.nameQuestionContainer}>
-              <div className={styles.nameInputLabel}>Hello. What's your name?</div>
+        <div className={styles.homePage}>
+          <div className={styles.logoContainer}>
+            <img src={logo} alt="logo" className={styles.logo} />
+          </div>
+         <div className={styles.container}>
+            <div className={styles.nameContainer}>
+              <div className={styles.nameAndColorWrapper}>
+                <div className={styles.nameQuestionContainer}>
+                   <div className={styles.nameInputLabel}>Hello. What's your name?</div>
             </div>
             <div className={styles.nameInputWrapper}>
               <input
@@ -157,8 +146,7 @@ return (
                                 Finish
                            </Link>
                       </div>
-                    </div>  
-                    // </div>
+                  </div>  
                 );
             };
 

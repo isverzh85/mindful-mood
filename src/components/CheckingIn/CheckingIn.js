@@ -30,5 +30,6 @@ const CheckingIn = ({ currentStep, feelings }) => {
     </div>
   );
 };
+        
 
 export default CheckingIn;

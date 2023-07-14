@@ -2,7 +2,7 @@
    {
     "bigFeelings": {
         "title": "How \"big\" are your feelings right now?",
-        "contentFeelings": {
+        "content": {
           "smallFeelings": "\"Small\" feelings are not any less painful than \"big\" feelings. \"Small\" feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you're so used to feeling like your feelings don't matter.",
           "bigFeelingsParagraph": "\"Big\" feelings are like sharing a bed with a hippo. You're overwhelmed, and feel like you're running a marathon even though you're sitting still."
         },
@@ -272,7 +272,7 @@
       {
         "waterIntake": {
             "title": "Drink a large glass of ice water or cold water.",
-            "water": {
+            "content": {
               "startSmall": "Let's start with something small. Grounding exercises like this can help you refocus on the present moment to distract yourself from distressing feelings.",
               "waterQuestion":"How much did that help you?"
             },
@@ -303,7 +303,7 @@
         {
           "boxBreathing": {
             "title": "Try a \"box-breathing\" exercise.",
-            "breathingExercise": {
+            "content": {
               "breathing":"How to do box-breathing: Breathe in for 4 seconds. Hold for 4 seconds. Breathe out for 4 seconds. Hold for 4 seconds. Repeat for as long as you need for a minimum of 8 rounds.",
               "breathingQuestion": "How much did that help you?"
             },
@@ -334,7 +334,7 @@
         {
           "stretching":{
               "title": "Have yourself a nice big stretch.",
-              "stretchRoutine": {
+              "content": {
                   "stretch": "Need a stretching routine? Stand up. Raise your arms high, high, high up above your head for 5 seconds, then try to touch your toes for 5 seconds. Repeat this 5 times.",
                   "stretchQuestion": "How much did that help you?"
               }, 
@@ -364,8 +364,7 @@
         },
         {
             "enjoyment":{
-                "title": "If it’s day time, stand outside in the sun and listen. If it’s night time, play some music.",
-                "enjoymentRoutine": {
+                "content": {
                     "enjoy": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
                     "enjoymentQuestion": "How much did that help you?"
                 }, 
@@ -396,7 +395,7 @@
             {
               "reachingOut":{
                     "title": "Send a loved one, friend, or family, a small message.",
-                    "reachingOutRoutine": {
+                    "content": {
                         "reach": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
                         "enjoymentQuestion": "How much did that help you?"
                     }, 

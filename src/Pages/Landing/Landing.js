@@ -154,11 +154,13 @@ return (
           </div>
         )}
         {currentStep >= 2 && (
-          <>
-            {feelings === "anxious" && <FeelingDown currentStep={currentStep} feelings={feelings} />}
-            {feelings === "checkingIn" && <CheckingIn currentStep={currentStep} feelings={feelings} />}
-          </>
-        )}
+  <>
+    {feelings === "anxious" && <FeelingDown currentStep={currentStep} feelings={feelings} />}
+    {/* <CheckingIn currentStep={currentStep} feelings={feelings} contentFeelings={contentFeelings} /> */}
+
+    {feelings === "checkingIn" && <CheckingIn currentStep={currentStep} feelings={feelings} />}
+  </>
+)}
       </div>
       <div className={styles.lineTwo}></div>
       <div className={styles.stepThreeContainer}>
