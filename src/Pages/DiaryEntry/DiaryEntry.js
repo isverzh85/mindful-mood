@@ -11,17 +11,20 @@ export const DiaryEntry = () => {
     const [currentStep, setCurrentStep] = useState(1);
     const [selectedValue, setSelectedValue] = useState('');
     const [isWritingFinished, setIsWritingFinished] = useState(false);
-    // const data = require('../../data.json');
-    
     const [checkedCheckboxes, setCheckedCheckboxes] = useState([]);
-
-
-
+    const [sectionData, setSectionData] = useState(null);
+    const secondQuestionData = data && data.data && data.data[1] ? data.data[1].section : null;
+    const thirdQuestionData = data && data.data && data.data[2] ? data.data[2].section : null;
+    const fourthQuestionData = data && data.data && data.data[3] ? data.data[3].section : null;
+    const fifthQuestionData = data && data.data && data.data[4] ? data.data[4].section : null;
 
     useEffect(() => {
         const savedName = localStorage.getItem("name");
         if (savedName) {
           setName(savedName);
+        }
+        if (data && data.data && data.data.length > 0 && data.data[0].section) {
+          setSectionData(data.data[0].section);
         }
         const savedBigFeelings = localStorage.getItem("bigFeelings");
         if (savedBigFeelings) {
@@ -69,10 +72,6 @@ export const DiaryEntry = () => {
          localStorage.setItem("currentStep", currentStep.toString());
         };
 
-console.log(data.bigFeelings);
-console.log(styles)
-console.log(data)
-
 return(
       <div className={styles.diaryPage}>
         <div className={styles.contentContainer}>
@@ -89,331 +88,116 @@ return(
                   </div>
                 </div>
             </div>
-
-          <div className={styles.radioButtonQuestions}>
-              <div className={styles.questionsContainer}>
-                 <div className={styles.oneContainer}>
-                         <div className={styles.one}>1.
-                            <div className={styles.content}>
-                            <div className={styles.contentFeelings}>
-                            <p className={styles.smallFeelings}>
-
-                              {data[0].bigFeelings.title}
-                              {data[0].bigFeelings.contentFeelings}
-                              
-
-                            </p>  
-                            <p className={styles.bigFeelingsParagraph}> 
-                            
-                            </p>
-                            <div className={styles.radioButtonsContainer}>
-                      <label>
-                         <input type="radio"
-                                name="bigFeelings"
-                                value="1"
-                                onChange={(e) => setSelectedValue(e.target.value)}
-                         />
-                         <br />
-                         <span className={styles.radioButtonNumber}>1</span>
-                     </label>
-                     <label>
-                         <input type="radio" 
-                                name="bigFeelings"
-                         />            
-                     </label>
-                     <label>
-                         <input type="radio" 
-                                name="bigFeelings"
-                         />           
-                     </label>
-                     <label>
-                         <input type="radio" 
-                                name="bigFeelings"
-                         />           
-                     </label>
-                     <label>
-                         <input type="radio" 
-                                name="bigFeelings"
-                                value="5"
-                         />
-                         <br />
-                         <span className={styles.radioButtonNumber}>5</span>       
-                     </label>
-                     </div>
-                  </div>
-                </div>
-               </div>
-             </div>
-          </div>
-                   <div className={styles.secondContainer}>
-                    <div className={styles.checklistContainer}>
-                       <div className={styles.two}>2.
-                       <div className={styles.pain}></div>
-                       </div>
-                       <div className={styles.checkboxes}>
-                          <div className={styles.row}>
-                             <label>
-                              <input type="checkbox" 
-                                     className={styles.checkbox}
-                            />
-                           </label>
-                           <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                           </div>
-                             <div className={styles.rowTwo}>
-                              <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                           <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                         </div>
-                     </div>
-                </div>
-          </div>
-                   <div className={styles.thirdContainer}>
-                      <div className={styles.checkListContainer}>
-                      <div className={styles.third}>3.
-                         <div className={styles.torso}></div>
-                          </div>
-                          <div className={styles.checkboxes}>
-                           <div className={styles.row}>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                        </div>
-                          <div className={styles.rowTwo}>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                         </div>
-                       </div>
-                     </div>
-                  </div>
-                      <div className={styles.fourthContainer}>
-                         <div className={styles.checkListContainer}>
-                        <div className={styles.fourth}>
-                          <div className={styles.stepNumber}>4.</div>
-                          <div className={styles.body}></div> 
-                          <div className={styles.time}></div>
-                           </div>
-                             <div className={styles.checkboxes}>
-                             <div className={styles.row}>
-                             <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                /> 
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            </div>
-                            <div className={styles.row}>
-                            <label>
-                               <input type="checkbox"
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox"   
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox"
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            <label>
-                               <input type="checkbox" 
-                                      className={styles.checkbox}
-                                />
-                            </label>
-                            </div>
-                           </div>
-                        </div>
-                     </div>
-                        <div className={styles.fifthContainer}>
-                           <div className={styles.checkListContainer}>
-                          <div className={styles.fifth}>5.
-                             <div className={styles.moment}></div>
-                              </div>
-                               <div className={styles.checkboxes}>
-                               <div className={styles.row}>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox"
-                                            className={styles.checkbox}
-                                       /> 
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                 </div>
-                                 <div className={styles.row}>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />  
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       />
-                                  </label>
-                                  <label>
-                                     <input type="checkbox" 
-                                            className={styles.checkbox}
-                                       /> 
-                                  </label>
-                                  </div>
-                              </div>
-                            </div>
-                        </div>
+                 <div className={styles.radioButtonQuestions}>
+                  <div className={styles.questionsContainer}>
+                     <div className={styles.oneContainer}>
+                        <div className={styles.one}>1.
+                            {sectionData ? (
+                               <>
+                             <div className={styles.bigFeelingsTitle}>
+                                 {sectionData.title}
+                             </div>
+                           <p className={styles.contentFeelings}>
+                               {sectionData.content[0]}
+                           </p>
+                               </>
+                           ) : (
+                                <div>Loading...</div>
+                         )}
                       </div>
+                          <div className={styles.radioButtonsContainer}>
+                             <label>
+                                 <input type="radio"
+                                        name="bigFeelings"
+                                        value="1"
+                                        onChange={(e) => setSelectedValue(e.target.value)}
+                                    />
+                                 <br />
+                                    <span className={styles.radioButtonNumber}>1</span>
+                              </label>
+                             <label>
+                                   <input type="radio" 
+                                          name="bigFeelings"
+                                     />            
+                             </label>
+                             <label>
+                                    <input type="radio" 
+                                           name="bigFeelings"
+                                    />           
+                             </label>
+                             <label>
+                                    <input type="radio" 
+                                           name="bigFeelings"
+                                     />           
+                             </label>
+                             <label>
+                                    <input type="radio" 
+                                           name="bigFeelings"
+                                           value="5"
+                                     />
+                                   <br />
+                                 <span className={styles.radioButtonNumber}>5</span>       
+                            </label>
+                          </div>
+                       </div>
+                   </div>
+                   <div className={styles.secondContainer}>
+                       <div className={styles.checklistContainer}>
+                           <div className={styles.two}>2. {secondQuestionData.title}</div>
+                               <div className={styles.checkboxes}>
+                                  {secondQuestionData.checkboxes.map((checkboxLabel, index) => (
+                              <label key={index}>
+                                 <input type="checkbox" className={styles.checkbox} />
+                                    {checkboxLabel}
+                               </label>
+                            ))}
+                        </div>
+                     </div>
+                  </div>
+                    <div className={styles.thirdContainer}>
+                      <div className={styles.checkListContainer}>
+                         <div className={styles.third}>3. {thirdQuestionData.title}</div>
+                           <div className={styles.checkboxes}>
+                              {thirdQuestionData.checkboxes.map((checkboxLabel, index) => (
+                              <label key={index}>
+                                   <input type="checkbox" className={styles.checkbox} />
+                                   {checkboxLabel}
+                               </label>
+                        ))}
                     </div>
-                </div>
+                  </div>
+              </div>
+              <div className={styles.fourthContainer}>
+            <div className={styles.checkListContainer}>
+              <div className={styles.fourth}>4. {fourthQuestionData.title}</div>
+              <div className={styles.checkboxes}>
+                {fourthQuestionData.checkboxes.map((checkboxLabel, index) => (
+                  <label key={index}>
+                    <input type="checkbox" className={styles.checkbox} />
+                    {checkboxLabel}
+                  </label>
+                ))}
+              </div>
             </div>
-      )
-    }
-
+          </div>
+          <div className={styles.fifthContainer}>
+             <div className={styles.checkListContainer}>
+                <div className={styles.fifth}>5. {fifthQuestionData.title}</div>
+                   <div className={styles.checkboxes}>
+                      {fifthQuestionData.checkboxes.map((checkboxLabel, index) => (
+                       <label key={index}>
+                             <input type="checkbox" className={styles.checkbox} />
+                                   {checkboxLabel}
+                         </label>
+                       ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+         </div>
+       </div> 
+     );
+   }
+                              
 export default DiaryEntry;

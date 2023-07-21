@@ -17,6 +17,8 @@ export const LandingPage = () => {
   const [isFinishedWriting, setIsFinishedWriting] = useState(false);
   const [isRadioSelected, setIsRadioSelected] = useState(false);
   const [selectedFeeling, setSelectedFeeling] = useState('');
+  const [stepTwoColor, setStepTwoColor] = useState('');
+
 
   useEffect(() => {
 
@@ -70,8 +72,10 @@ export const LandingPage = () => {
   
     if (selectedFeeling === "anxious" || selectedFeeling === "checkingIn") {
       setCurrentStep(2);
+      setStepTwoColor(color); 
     } else {
       setCurrentStep(1);
+      setStepTwoColor(''); 
     }
   
     localStorage.setItem("feeling", selectedFeeling);
@@ -140,18 +144,18 @@ return (
         <div className={styles.stepTwoContainer}>
           {!isRadioSelected && (
             <div
-              className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
-                isFinishedWriting ? styles.completedStep : ""
-              }`}
-            >
+            className={`${styles.stepTwo} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
+              isFinishedWriting ? styles.completedStep : ""
+            }`}
+          >
               Step 2
               <div
-              className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
-                isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""
-              }`}
-              style={{ background: currentStep >= 2 ? color : "" }}
-            ></div>
-          </div>
+    className={`${styles.stepTwoUnderline} ${currentStep >= 2 ? "" : styles.grayedOutStep} ${
+      isAnxiousChecked || feelings === "checkingIn" ? "selectedColor" : ""
+    }`}
+    style={{ background: stepTwoColor }}
+  ></div>
+</div>
         )}
         {currentStep >= 2 && (
   <>

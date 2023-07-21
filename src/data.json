@@ -1,426 +1,93 @@
-[
-   {
-    "bigFeelings": {
+{
+  "data": [
+    {
+      "section": {
         "title": "How \"big\" are your feelings right now?",
-        "content": {
-          "smallFeelings": "\"Small\" feelings are not any less painful than \"big\" feelings. \"Small\" feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you're so used to feeling like your feelings don't matter.",
-          "bigFeelingsParagraph": "\"Big\" feelings are like sharing a bed with a hippo. You're overwhelmed, and feel like you're running a marathon even though you're sitting still."
-        },
-        "radioButtons": [
-          {
-            "value": "1",
-            "label": "1"
-          },
-          {
-            "value": "2",
-            "label": "2"
-          },
-          {
-            "value": "3",
-            "label": "3"
-        },
-        {
-            "value": "4",
-            "label": "4"
-        },
-        {
-            "value": "5",
-            "label": "5"
-        }
-      ]
-    }
-  },
-  {
-     "painSection": {
+        "content": [
+          "\"Small\" feelings are not any less painful than big feelings. Small feelings are like annoying bugs. They make you irritated. Sometimes they can even make you feel numb because you're so used to feeling like your feelings don't matter.",
+          "Big feelings are like sharing a bed with a hippo. You're overwhelmed and feel like you're running a marathon even though you're sitting still."
+        ],
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    },
+    {
+      "section": {
         "title": "Starting from your head to your shoulders, check all the areas where you feel pain, discomfort, or a general feeling of upset.",
         "checkboxes": [
-         {
-            "name": "forehead",
-            "value": "forehead",
-            "label": "Forehead"
-      },
-      {
-           "name": "crownHead",
-           "value": "crownHead",
-           "label": "Crown of the head"
-      },
-      {
-           "name": "neck",
-           "value": "neck",
-           "label": "Base of the neck"
-      },
-      {
-           "name": "backHead",
-           "value": "backHead",
-           "label": "Back of the head"
-      },
-      {
-           "name": "decolletage",
-           "value": "decolletage",
-           "label": "Decolletage"
-      },
-      {
-           "name": "throat",
-           "value": "throat",
-           "label": "Throat"
-      },
-      {
-           "name": "temples",
-           "value": "temples",
-           "label": "Temples"
-      },
-      {
-           "name": "eyes",
-           "value": "eyes",
-           "label": "Eyes"
-      },
-      {
-           "name": "ears",
-           "value": "ears",
-           "label": "Ears"
-      },
-      {
-           "name": "jaw",
-           "value": "jaw",
-           "label": "Jaw"
-      },
-      {
-           "name": "lips",
-           "value": "lips",
-           "label": "Lips"
-      },
-      {
-           "name": "shoulders",
-           "value": "shoulders",
-           "label": "Shoulders"
-     }
-    ]
-   }
-  },
-  {
-    "torsoSection": {
-      "title": "Next, move down to your torso. Note, which areas are feeling uncomfortable, tight, painful, or even foreign.",
-      "checkboxes": [
-        {
-            "name": "palms",
-            "value": "palms",
-            "label": "Palms"
-        },
-        {
-            "name": "chest",
-            "value": "chest",
-            "label": "Chest"
-        },
-        {
-            "name": "stomach",
-            "value": "stomach",
-            "label": "Stomach"
-        },
-        {
-            "name": "ribs",
-            "value": "ribs",
-            "label": "Ribs"
-        },
-        {
-            "name": "forearm",
-            "value": "forearm",
-            "label": "Forearm"
-        },
-        {
-            "name": "fingers",
-            "value": "fingers",
-            "label": "Fingers"
-        },
-        {
-            "name": "elbows",
-            "value": "elbows",
-            "label": "Elbows"
-        },
-        {
-            "name": "armpits",
-            "value": "armpits",
-            "label": "Armpits"
-        },
-        {
-            "name": "upperBack",
-            "value": "upperBack",
-            "label": "Upper back"
-        },
-        {
-            "name": "lowerBack",
-            "value": "lowerBack",
-            "label": "Lower back"
-          }
+          "Forehead", "Crown of the head", "Base of the neck", "Back of the head",
+          "Decolletage", "Throat", "Temples", "Eyes", "Ears", "Jaw", "Lips", "Shoulders"
         ]
       }
     },
     {
-       "upperBodyDiscomfortSection": {
-          "title": "Now that you're aware of your upper body, see if you can note points of discomfort.",
-          "content": "Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to.",
-          "checkboxes": [
-            {
-                "name": "sweatyPalms",
-                "value": "sweatyPalms",
-                "label": "Sweaty Palms"
-            },
-            {
-                "name": "palpitations",
-                "value": "palpitations",
-                "label": "Palpitations"
-              },
-              {
-                "name": "headache",
-                "value": "headache",
-                "label": "Headache/Migraine"
-              },
-              {
-                "name": "shallowBreathing",
-                "value": "shallowBreathing",
-                "label": "Shallow Breathing"
-              },
-              {
-                "name": "racingThoughts",
-                "value": "racingThoughts",
-                "label": "Racing Thoughts"
-              },
-              {
-                "name": "stomach",
-                "value": "stomach",
-                "label": "Stomach Issues"
-              },
-              {
-                "name": "neckTightness",
-                "value": "neckTightness",
-                "label": "Neck Tightness"
-              },
-              {
-                "name": "jaw",
-                "value": "jaw",
-                "label": "Jaw Pain"
-              },
-              {
-                "name": "eye",
-                "value": "eye",
-                "label": "Eye Strain/ Dryness"
-              },
-              {
-                "name": "dryMouth",
-                "value": "dryMouth",
-                "label": "Dry Mouth"
-              }
-            ]
-        }
-      },
-      {
-        "lowerBodySection": {
-          "title": "Take a moment before moving down to your hips, thighs, legs, and feet. Note which areas are feeling uncomfortable, tight, painful or even foreign.",
-          "checkboxes": [
-            {
-              "name": "hips",
-              "value": "hips",
-              "label": "Hips"
-            },
-            {
-              "name": "intimateAreas",
-              "value": "intimateAreas",
-              "label": "Intimate Areas"
-            },
-            {
-              "name": "thighs",
-              "value": "thighs",
-              "label": "Thighs"
-            },
-            {
-                "name": "knees",
-                "value": "knees",
-                "label": "Knees"
-              },
-              {
-                "name": "feet",
-                "value": "feet",
-                "label": "Feet"
-              },
-              {
-                "name": "buttocks",
-                "value": "buttocks",
-                "label": "Buttocks"
-              },
-              {
-                "name": "calves",
-                "value": "calves",
-                "label": "Calves"
-              },
-              {
-                "name": "ankles",
-                "value": "ankles",
-                "label": "Ankles"
-              },
-              {
-                "name": "shin",
-                "value": "shin",
-                "label": "Shin"
-              },
-              {
-                "name": "toes",
-                "value": "toes",
-                "label": "Toes"
-              }
-            ]
-        }
-      },
-      {
-        "waterIntake": {
-            "title": "Drink a large glass of ice water or cold water.",
-            "content": {
-              "startSmall": "Let's start with something small. Grounding exercises like this can help you refocus on the present moment to distract yourself from distressing feelings.",
-              "waterQuestion":"How much did that help you?"
-            },
-            "radioButtons": [
-              {
-                "value": "1",
-                "label": "1"
-              },
-              {
-                "value": "2",
-                "label": "2"
-              },
-              {
-                "value": "3",
-                "label": "3"
-            },
-            {
-                "value": "4",
-                "label": "4"
-            },
-            {
-                "value": "5",
-                "label": "5"
-            }
-          ]
-        }
-      },
-        {
-          "boxBreathing": {
-            "title": "Try a \"box-breathing\" exercise.",
-            "content": {
-              "breathing":"How to do box-breathing: Breathe in for 4 seconds. Hold for 4 seconds. Breathe out for 4 seconds. Hold for 4 seconds. Repeat for as long as you need for a minimum of 8 rounds.",
-              "breathingQuestion": "How much did that help you?"
-            },
-            "radioButtons": [
-                {
-                  "value": "1",
-                  "label": "1"
-                },
-                {
-                  "value": "2",
-                  "label": "2"
-                },
-                {
-                  "value": "3",
-                  "label": "3"
-              },
-              {
-                  "value": "4",
-                  "label": "4"
-              },
-              {
-                  "value": "5",
-                  "label": "5"
-              }
-            ]
-          }
-        },
-        {
-          "stretching":{
-              "title": "Have yourself a nice big stretch.",
-              "content": {
-                  "stretch": "Need a stretching routine? Stand up. Raise your arms high, high, high up above your head for 5 seconds, then try to touch your toes for 5 seconds. Repeat this 5 times.",
-                  "stretchQuestion": "How much did that help you?"
-              }, 
-              "radioButtons": [
-                {
-                  "value": "1",
-                  "label": "1"
-                },
-                {
-                  "value": "2",
-                  "label": "2"
-                },
-                {
-                  "value": "3",
-                  "label": "3"
-              },
-              {
-                  "value": "4",
-                  "label": "4"
-              },
-              {
-                  "value": "5",
-                  "label": "5"
-              }
-            ]
-          }
-        },
-        {
-            "enjoyment":{
-                "content": {
-                    "enjoy": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
-                    "enjoymentQuestion": "How much did that help you?"
-                }, 
-                "radioButtons": [
-                  {
-                    "value": "1",
-                    "label": "1"
-                  },
-                  {
-                    "value": "2",
-                    "label": "2"
-                  },
-                  {
-                    "value": "3",
-                    "label": "3"
-                },
-                {
-                    "value": "4",
-                    "label": "4"
-                },
-                {
-                    "value": "5",
-                    "label": "5"
-                }
-              ]
-            }
-           },
-            {
-              "reachingOut":{
-                    "title": "Send a loved one, friend, or family, a small message.",
-                    "content": {
-                        "reach": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, “Hey. I’m feeling a little down, but thinking of you has cheered me up.”",
-                        "enjoymentQuestion": "How much did that help you?"
-                    }, 
-                    "radioButtons": [
-                      {
-                        "value": "1",
-                        "label": "1"
-                      },
-                      {
-                        "value": "2",
-                        "label": "2"
-                      },
-                      {
-                        "value": "3",
-                        "label": "3"
-                    },
-                    {
-                        "value": "4",
-                        "label": "4"
-                    },
-                    {
-                        "value": "5",
-                        "label": "5"
-                    }
-                  ]
-            }
-        }
-    ]
+      "section": {
+        "title": "Next, move down to your torso. Note, which areas are feeling uncomfortable, tight, painful, or even foreign.",
+        "checkboxes": [
+          "Palms", "Chest", "Stomach", "Ribs", "Forearm", "Fingers", "Elbows", "Armpits",
+          "Upper back", "Lower back"
+        ]
+      }
+    },
+    {
+      "section": {
+        "title": "Now that you're aware of your upper body, see if you can note points of discomfort.",
+        "content": "Take your time. You're doing great, and you only need to check for any discomfort that you already have. Sometimes reading about symptoms can cause them to manifest, so feel free to skip this question if you need to.",
+        "checkboxes": [
+          "Sweaty Palms", "Palpitations", "Headache/Migraine", "Shallow Breathing",
+          "Racing Thoughts", "Stomach Issues", "Neck Tightness", "Jaw Pain",
+          "Eye Strain/Dryness", "Dry Mouth"
+        ]
+      }
+    },
+    {
+      "section": {
+        "title": "Take a moment before moving down to your hips, thighs, legs, and feet. Note which areas are feeling uncomfortable, tight, painful, or even foreign.",
+        "checkboxes": [
+          "Hips", "Intimate Areas", "Thighs", "Knees", "Feet", "Buttocks",
+          "Calves", "Ankles", "Shin", "Toes"
+        ]
+      }
+    },
+    {
+      "section": {
+        "title": "Drink a large glass of ice water or cold water.",
+        "content": "Let's start with something small. Grounding exercises like this can help you refocus on the present moment to distract yourself from distressing feelings.",
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    },
+    {
+      "section": {
+        "title": "Try a \"box-breathing\" exercise.",
+        "content": "How to do box-breathing: Breathe in for 4 seconds. Hold for 4 seconds. Breathe out for 4 seconds. Hold for 4 seconds. Repeat for as long as you need for a minimum of 8 rounds.",
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    },
+    {
+      "section": {
+        "title": "Have yourself a nice big stretch.",
+        "content": "Need a stretching routine? Stand up. Raise your arms high above your head for 5 seconds, then try to touch your toes for 5 seconds. Repeat this 5 times.",
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    },
+    {
+      "section": {
+        "title": "Share a moment of enjoyment.",
+        "content": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, 'Hey. I’m feeling a little down, but thinking of you has cheered me up.'",
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    },
+    {
+      "section": {
+        "title": "Send a loved one, friend, or family, a small message.",
+        "content": "Not sure what to say? You can tell them you love them, ask for some kind words, or simply say, 'Hey. I’m feeling a little down, but thinking of you has cheered me up.'",
+        "inputType": "radio",
+        "options": ["1", "2", "3", "4", "5"]
+      }
+    }
+  ]
+}
