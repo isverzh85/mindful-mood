@@ -68,9 +68,17 @@ export const DiaryEntry = () => {
       }, [currentStep, bigFeelings]);
 
       const handleWritingFinished = () => {
-         setIsWritingFinished(true);
-         localStorage.setItem("currentStep", currentStep.toString());
-        };
+        setIsWritingFinished(true);
+        localStorage.setItem("currentStep", currentStep.toString());
+      
+        if (currentStep === 1) {
+          localStorage.setItem("bigFeelings", selectedValue);
+        }
+      
+        if (currentStep === 2) {
+          localStorage.setItem("feelings", bigFeelings);
+        }
+      };
 
 return(
       <div className={styles.diaryPage}>
@@ -81,15 +89,52 @@ return(
               <div className={styles.great}>You're doing great, {name}.
               </div>
                 <div className={styles.hardFeeling}>It's hard feeling the way you're feeling in this moment. Let's break it down as a way to help soothe those feelings.
-                {currentStep < 3 ? (
-                  <Link to="/landing-page" className={styles.finishWriting}>Finish Writing.</Link>
-                  ) : null}
+                    {currentStep < 3 ? (
+                    <Link
+                        to={{
+                        pathname: "/landing-page",
+                        state: {
+                        selectedFeeling: bigFeelings,
+                        currentStep: currentStep === 1 ? 2 : currentStep, 
+                      },
+                  }}
+                      className={styles.finishWriting}
+                      onClick={handleWritingFinished} 
+                    >
+                      Finish Writing.
+                 </Link>
+               ) : null}
                      <div className={styles.separateLine}></div>
                   </div>
                 </div>
             </div>
                  <div className={styles.radioButtonQuestions}>
                   <div className={styles.questionsContainer}>
+                  <div className={styles.oneContainer}>
+                       <div className={styles.checkBoxContainer}>
+                           <div className={styles.one}>1. 
+                           {sectionData ? (
+                               <>
+                             <div className={styles.bigFeelingsTitle}>
+                                 {sectionData.title}
+                             </div>
+                           <p className={styles.contentFeelings}>
+                               {sectionData.content[0]}
+                           </p>
+                               </>
+                           ) : (
+                                <div>Loading...</div>
+                         )}  
+                               <div className={styles.checkboxes}>
+                                  {secondQuestionData.checkboxes.map((checkboxLabel, index) => (
+                              <label key={index}>
+                                 <input type="checkbox" className={styles.checkbox} />
+                                    {checkboxLabel}
+                               </label>
+                            ))}
+                        </div>
+                     </div>
+                  </div>
                      <div className={styles.oneContainer}>
                         <div className={styles.one}>1.
                             {sectionData ? (
@@ -105,42 +150,8 @@ return(
                                 <div>Loading...</div>
                          )}
                       </div>
-                          <div className={styles.radioButtonsContainer}>
-                             <label>
-                                 <input type="radio"
-                                        name="bigFeelings"
-                                        value="1"
-                                        onChange={(e) => setSelectedValue(e.target.value)}
-                                    />
-                                 <br />
-                                    <span className={styles.radioButtonNumber}>1</span>
-                              </label>
-                             <label>
-                                   <input type="radio" 
-                                          name="bigFeelings"
-                                     />            
-                             </label>
-                             <label>
-                                    <input type="radio" 
-                                           name="bigFeelings"
-                                    />           
-                             </label>
-                             <label>
-                                    <input type="radio" 
-                                           name="bigFeelings"
-                                     />           
-                             </label>
-                             <label>
-                                    <input type="radio" 
-                                           name="bigFeelings"
-                                           value="5"
-                                     />
-                                   <br />
-                                 <span className={styles.radioButtonNumber}>5</span>       
-                            </label>
-                          </div>
-                       </div>
-                   </div>
+                  </div>
+              </div>
                    <div className={styles.secondContainer}>
                        <div className={styles.checklistContainer}>
                            <div className={styles.two}>2. {secondQuestionData.title}</div>
@@ -179,6 +190,7 @@ return(
                 ))}
               </div>
             </div>
+          </div>
           </div>
           <div className={styles.fifthContainer}>
              <div className={styles.checkListContainer}>

@@ -1,19 +1,23 @@
 .diaryButton {
-  margin-left: 30px;
   font-family: 'Jost';
   font-style: normal;
   font-weight: 700;
   font-size: 24px;
   line-height: 35px;
   color: var(--underline-color);
+  text-decoration: none; 
 }
   
 .diaryButtonContainer {
   box-sizing: border-box;
   border: 5px solid var(--underline-color);
   border-radius: 100px;
-  // width:252px;
+  width: 252px;
   height: 61px;
+  margin-left: 30px;
+  display: flex; 
+  justify-content: center; 
+  align-items: center;
 }
 
 .diaryButtonWrapper{
